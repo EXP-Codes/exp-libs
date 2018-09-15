@@ -6,7 +6,7 @@
     <!--项目基本信息(必填)-->
     <groupId>exp.libs</groupId>
     <artifactId>exp-libs-simple</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>经验构件库-精简版</name>
@@ -39,7 +39,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <release.dir>${project.build.directory}/${project.artifactId}-${project.version}</release.dir>
         <jdk.version>1.6</jdk.version>
-        <explibs.version>1.0</explibs.version>
+        <explibs.version>1.1-SNAPSHOT</explibs.version>
     </properties>
 
     <!-- 项目依赖 -->
