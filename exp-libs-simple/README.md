@@ -23,13 +23,13 @@
 
 　由于`exp-libs`封装了大量第三方构件，因此需要在**开发环境**直接导入到Maven的`pom.xml`文件使用，<br/>　利用pom文件自动加载第三方依赖构件（若仅导入单个`exp-libs[-simple].jar`，有很多功能是无法使用的）。
 
-- [在线Javadoc](https://lyy289065406.github.io/api-online/javadoc/exp-libs/1.0/index.html)
+- [在线Javadoc](https://lyy289065406.github.io/api-online/javadoc/exp-libs/1.1/index.html)
 - POM坐标（完全版）：
 ```xml
 <dependency>
   <groupId>exp.libs</groupId>
   <artifactId>exp-libs</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 </dependency>
 ```
 - POM坐标（精简版，过滤了不常用的第三方构件）：
@@ -37,7 +37,7 @@
 <dependency>
   <groupId>exp.libs</groupId>
   <artifactId>exp-libs-simple</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
 </dependency>
 ```
 
