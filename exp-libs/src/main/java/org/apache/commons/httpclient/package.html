@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html> 
+  <body>
+    <pre>
+        修正commons-httpclient-3.1自动重定向丢失Response Header中的Set-Cookie的BUG: 
+    
+        当使用HttpClient访问一个会发生重定向跳转的URL时, 
+        会自动执行跳转, 直到跳转到最后一个目标URL为止, 而这个自动的重定向行为无法被禁止.
+        
+        由于这个行为, 会发生两个现象：
+        1.使用HttpClient访问原始URL后，直接返回的状态码就是200 （而非302）.
+        2.得到的Response Header是最后一个URL的Response Header，而中间跳转的URL的Response Header全部丢失.
+        
+        第1点其实影响不大, 但第2点会导致中间跳转的URL所返回的Set-Cookie丢失,
+        因此此处主要针对第2点进行改写：
+        记录中间所有URL返回的Response Header中的Set-Cookie，并全部追加到最后一个URL的Response Header中.
+    </pre>
+  </body>
+</html>

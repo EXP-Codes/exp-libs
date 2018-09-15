@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" scan="false" scanPeriod="60 seconds">
+	<property name="CHARSET" value="utf-8" /><!-- 字符集 -->
+	<property name="LOG_HOME" value="log" /><!-- log目录 -->
+	<property name="BACKUP" value="${LOG_HOME}/BACKUP/%d{yyyy-MM-dd}" /><!-- 日志备份目录 -->
+	<property name="PATTERN_DEF" value="[%d{yyyy-MM-dd HH:mm:ss SSS}] [%-5p] [%t] [%c{0}:%L] - %m%n" /><!-- 日志输出格式, %c{0} 表示打印logger名，若logger名是一个类路径，则打印最后一个.右边的部分 -->
+
+	<!-- 控制台日志器 -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${PATTERN_DEF}</pattern>
+		</encoder>
+		<target>System.out</target><!-- System.out|System.err -->
+	</appender>
+
+    <!-- 经验库日志器  -->
+    <appender name="exp-libs"
+      class="ch.qos.logback.core.rolling.RollingFileAppender">
+      <file>${LOG_HOME}/exp-libs.log</file>
+      <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+         <fileNamePattern>${BACKUP}/exp-libs_%d{yyyy-MM-dd}-%i.log.zip</fileNamePattern>
+         <maxHistory>15</maxHistory>
+         <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+            <maxFileSize>64MB</maxFileSize>
+         </timeBasedFileNamingAndTriggeringPolicy>
+      </rollingPolicy>
+      <encoder>
+         <charset>${CHARSET}</charset>
+         <pattern>${PATTERN_DEF}</pattern>
+      </encoder>
+      <filter class="ch.qos.logback.classic.filter.LevelFilter">
+         <level>ERROR</level>
+         <onMatch>ACCEPT</onMatch>
+         <onMismatch>DENY</onMismatch>
+      </filter>
+    </appender>
+   
+	<!-- 经验库日志 -->
+	<logger name="exp.libs" level="info" additivity="true">
+		<appender-ref ref="exp-libs" />
+	</logger>
+	
+	<!-- 第三方日志(屏蔽debug日志) -->
+	<logger name="org.apache" level="error" additivity="true" />
+	<logger name="httpclient.wire" level="error" additivity="true" />
+	<logger name="org.logicalcobwebs" level="error" additivity="true" />
+	
+	<!-- 根日志 -->
+	<root level="debug">
+		<appender-ref ref="console" />
+	</root>
+</configuration>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--项目基本信息(必填)-->
+    <groupId>exp.libs</groupId>
+    <artifactId>exp-libs-simple</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <name>经验构件库-精简版</name>
+    <description>此构件仅用于过滤exp-libs中不常用的第三方构件</description>
+    <url>https://github.com/lyy289065406/exp-libs/trunk</url>
+    <inceptionYear>2018-08-01</inceptionYear>
+
+    <!--项目的问题管理系统(可选)-->
+    <issueManagement>
+        <system>EXPLIBS-API-ONLINE</system>
+        <url>https://lyy289065406.github.io/api-online/</url>
+    </issueManagement>
+    
+    <!--项目的问题追踪系统(可选)-->
+    <ciManagement>
+        <system>jenkins</system>
+        <url>http://127.0.0.1:8080/jenkins/</url>
+    </ciManagement>
+    
+    <!-- 软件配置管理 -->
+    <scm>
+        <!-- 项目SVN主干目录（需保证目录已存在） -->
+        <connection>scm:svn:https://github.com/lyy289065406/exp-libs/trunk</connection>
+        <developerConnection>scm:svn:https://github.com/lyy289065406/exp-libs/trunk</developerConnection>
+        <url>scm:svn:https://github.com/lyy289065406/exp-libs/trunk</url>
+    </scm>
+
+    <!-- 变量定义 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <release.dir>${project.build.directory}/${project.artifactId}-${project.version}</release.dir>
+        <jdk.version>1.6</jdk.version>
+        <explibs.version>1.0</explibs.version>
+    </properties>
+
+    <!-- 项目依赖 -->
+    <dependencies>
+    
+        <!-- 经验库 -->
+        <dependency>
+          <groupId>exp.libs</groupId>
+          <artifactId>exp-libs</artifactId>
+          <version>${explibs.version}</version>
+          <exclusions>
+            <exclusion>
+              <groupId>mysql</groupId>
+              <artifactId>mysql-connector-java</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>com.oracle</groupId>
+              <artifactId>ojdbc</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>redis.clients</groupId>
+              <artifactId>jedis</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.eclipse</groupId>
+              <artifactId>draw2d</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.jgraph</groupId>
+              <artifactId>jGraph</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>com.realpersist</groupId>
+              <artifactId>schemaeditor</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>exp.libs</groupId>
+              <artifactId>jvm-agent</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>net.sf.ehcache</groupId>
+              <artifactId>ehcache</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>exp.libs</groupId>
+              <artifactId>jep</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.quartz-scheduler</groupId>
+              <artifactId>quartz</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>jsch</groupId>
+              <artifactId>jsch</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>javax.activation</groupId>
+              <artifactId>activation</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>javax.mail</groupId>
+              <artifactId>mail</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.activemq</groupId>
+              <artifactId>activemq-all</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.axis2</groupId>
+              <artifactId>axis2-adb</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.ws.xmlschema</groupId>
+              <artifactId>xmlschema-core</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.axis2</groupId>
+              <artifactId>axis2-transport-http</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.axis2</groupId>
+              <artifactId>axis2-transport-local</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.cxf</groupId>
+              <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.cxf</groupId>
+              <artifactId>cxf-rt-transports-http</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.cxf</groupId>
+              <artifactId>cxf-rt-transports-http-jetty</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>net.webservices.client</groupId>
+              <artifactId>wsdl4j</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>net.webservices.client</groupId>
+              <artifactId>jabref</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>net.webservices.client</groupId>
+              <artifactId>soapui</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>net.webservices.client</groupId>
+              <artifactId>soapui-xmlbeans</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.seleniumhq.selenium</groupId>
+              <artifactId>selenium-java</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>com.codeborne</groupId>
+              <artifactId>phantomjsdriver</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.seleniumhq.selenium</groupId>
+              <artifactId>selenium-chrome-driver</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.seleniumhq.selenium</groupId>
+              <artifactId>selenium-htmlunit-driver</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>com.sun.media</groupId>
+              <artifactId>jai-imageio</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.tensorflow</groupId>
+              <artifactId>tensorflow</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.tensorflow</groupId>
+              <artifactId>libtensorflow</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.tensorflow</groupId>
+              <artifactId>libtensorflow_jni</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.java-websocket</groupId>
+              <artifactId>Java-WebSocket</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.codehaus.janino</groupId>
+              <artifactId>janino</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.codehaus.janino</groupId>
+              <artifactId>commons-compiler</artifactId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+    </dependencies>
+
+    <!-- 项目构建 -->
+    <build>
+        <plugins>
+
+            <!-- 指定项目JDK版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            
+        </plugins>
+    </build>
+
+    <!-- 项目发布管理 -->
+    <distributionManagement>
+    
+        <!-- 私服地址 ，基线仓库 -->
+        <repository>
+            <id>Releases</id>
+            <url>http://127.0.0.1:8081/nexus/content/repositories/releases</url>
+        </repository>
+        
+        <!-- 私服地址 ，快照仓库 -->
+        <snapshotRepository>
+            <id>Snapshots</id>
+            <url>http://127.0.0.1:8081/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>

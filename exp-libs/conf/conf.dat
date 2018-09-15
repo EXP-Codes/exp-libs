@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config hint="全量配置"> 
+  
+  <datasources caption="数据源列表">
+    <datasource id="TEST-DS-SQL" caption="示例配置">
+      <driver default="mysql" caption="数据源驱动类型" hint="常用枚举:
+      	oracle/mysql/sqlite/redis">mysql</driver>
+      <ip caption="数据库IP">127.0.0.1</ip>
+      <port caption="数据库端口">3306</port>
+      <name caption="库名/实例名">test</name>
+      <username caption="登录账户">root</username>
+      <password caption="登录密码">root</password>
+      <charset default="UTF-8" caption="数据库字符集">UTF-8</charset>
+      <maximum-active-time default="60000" caption="连接超时时间(ms)">60000</maximum-active-time>
+      <maximum-connection-lifetime default="3600000" caption="单个连接的最大使用寿命(ms)">3600000</maximum-connection-lifetime>
+      <house-keeping-test-sql default="select 1" caption="空闲连接保活的测试sql" hint="语法需实际数据库支持">select 1</house-keeping-test-sql>
+      <house-keeping-sleep-time default="300000" caption="空闲连接保活的测试间隔(ms)">300000</house-keeping-sleep-time>
+      <simultaneous-build-throttle default="10" caption="可同时建立的最大连接数">10</simultaneous-build-throttle>
+      <maximum-connection-count default="20" caption="可同时存在的最大连接数">20</maximum-connection-count> 
+      <minimum-connection-count default="5" caption="(连接池)保有的最少连接数">5</minimum-connection-count> 
+      <maximum-new-connections default="5" caption="当没有空闲连接可以分配时, 在队列中等候的最大请求数">5</maximum-new-connections>
+      <prototype-count default="2" caption="(连接池)保有的最少空闲连接数">2</prototype-count>
+      <test-before-use default="false" caption="在连接使用前测试是否可用">false</test-before-use>
+      <test-after-use default="false" caption="在连接使用后测试是否可用(回收到连接池复用)">false</test-after-use>
+      <trace default="false" caption="DEBUG模式" hint="使用log记录执行的sql">false</trace>
+    </datasource>
+    
+    <datasource id="TEST-DS-NOSQL" caption="示例配置" hint="此为兼容redis配置, 但不适用于redis集群模式，不推荐使用">
+      <driver default="mysql" caption="数据源驱动类型">redis</driver>
+      <ip caption="数据库IP">127.0.0.1</ip>
+      <port caption="数据库端口">6379</port>
+      <password caption="登录密码"></password>
+      <maximum-active-time default="10000" caption="连接超时时间(ms)">10000</maximum-active-time>
+      <maximum-connection-count default="20" caption="可同时存在的最大连接数">20</maximum-connection-count> 
+      <maximum-connection-lifetime default="10000" caption="池满时,等待可用连接的最大时间(ms)">10000</maximum-connection-lifetime>
+      <prototype-count default="8" caption="(连接池)最多可保有的空闲连接数">8</prototype-count>
+      <test-before-use default="true" caption="在连接使用前测试是否可用">true</test-before-use>
+    </datasource>
+    
+    <redis id="TEST-DS-REDIS" caption="示例配置">
+      <cluster default="false" caption="集群模式" 
+        hint="redis有单机/主从/哨兵/集群模式, 仅集群模式下需要开启此选项">false</cluster>
+      <sockets caption="redis连接串,格式为 ip:port[,ip:port,...]" 
+        hint="集群模式需要配置所有节点的socket，单机/主从/哨兵模式下只需配置主机（配置从机亦可但不建议，但哨兵机不允许配置）"
+      >127.0.0.1:6379</sockets>
+      <password caption="redis密码"></password>
+      <timeout default="2000" caption="redis连接/请求超时时间" hint="单位:ms">2000</timeout>
+      <maxTotal default="8" caption="redis连接池最大连接数" hint="单位:ms">8</maxTotal>
+      <maxIdle default="8" caption="redis连接池最大空闲连接数" hint="单位:ms">8</maxIdle>
+      <maxWaitMillis default="-1" caption="当连接池已满时，等待可用连接的最大时间(-1表示永不超时)" hint="单位:ms">-1</maxWaitMillis>
+      <testOnBorrow default="true" caption="从连接池提取连接前是否进行可用性测试" hint="可确保得到的连接均是可用">true</testOnBorrow>
+    </redis>
+  </datasources>
+  
+  <sockets caption="Socket列表">
+    <socket id="TEST-SOCK" caption="示例配置">
+      <ip default="127.0.0.1" caption="服务IP">127.0.0.1</ip>
+      <port default="9998" caption="服务端口">9998</port>
+      <username caption="登陆账号"></username>
+      <password caption="登陆密码"></password>
+      <charset default="UTF-8" caption="收发数据编码" hint="简化配置(优先级低)">UTF-8</charset>
+      <!-- readCharset default="UTF-8" caption="接收数据编码">UTF-8</readCharset -->
+      <!-- writeCharset default="UTF-8" caption="发送数据编码">UTF-8</writeCharset -->
+      <bufferSize default="1" caption="收发数据缓冲区大小(MB)" hint="简化配置(优先级低)">1</bufferSize>
+      <!-- readBufferSize default="1" caption="接收数据缓冲区大小(MB)">1</readBufferSize -->
+      <!-- writeBufferSize default="1" caption="发送数据缓冲区大小(MB)">1</writeBufferSize -->
+      <delimiter default="\0" caption="收发数据的消息分隔符" hint="简化配置(优先级低)">\0</delimiter>
+      <!-- readDelimiter default="\0" caption="接收数据的消息分隔符" 
+      		hint="对于NIO模式, 支持配置多个接收分隔符, 如: @{delimiter1}@ @{delimiter2}@ @{delimiter3}@"
+      		>\0</readDelimiter -->
+      <!-- writeDelimiter default="\0" caption="发送数据的消息分隔符">\0</writeDelimiter -->
+      <overtime default="60000" caption="交互超时时间(ms)">60000</overtime>
+      <maxConnectionCount default="100" caption="最大连接数" hint="仅服务端有效">100</maxConnectionCount>
+      <exitCmd default="exit" caption="断开连接命令" hint="仅NIO模式有效, 需交互双方协议">exit</exitCmd>
+    </socket>
+  </sockets>
+   
+</config>

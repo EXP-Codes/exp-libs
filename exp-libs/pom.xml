@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--项目基本信息(必填)-->
+    <groupId>exp.libs</groupId>
+    <artifactId>exp-libs</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <name>exp-libs</name>
+    <description>经验库</description>
+    <url>https://github.com/lyy289065406/exp-libs/trunk</url>
+    <inceptionYear>2016-01-01</inceptionYear>
+
+    <!--项目的问题管理系统(可选)-->
+    <issueManagement>
+        <system>Jenkins</system>
+        <url>http://127.0.0.1:8080/job/exp-libs/</url>
+    </issueManagement>
+    
+    <!--项目的问题追踪系统(可选)-->
+    <ciManagement>
+        <system>jenkins</system>
+        <url>http://127.0.0.1:8080/job/exp-libs/</url>
+    </ciManagement>
+    
+    <!-- 软件配置管理 -->
+    <scm>
+        <!-- 项目SVN主干目录（需保证目录已存在） -->
+        <connection>scm:svn:https://github.com/lyy289065406/exp-libs/trunk</connection>
+        <developerConnection>scm:svn:https://github.com/lyy289065406/exp-libs/trunk</developerConnection>
+        <url>scm:svn:https://github.com/lyy289065406/exp-libs/trunk</url>
+    </scm>
+
+    <!-- 变量定义 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <release.dir>${project.build.directory}/${project.artifactId}-${project.version}</release.dir>
+        <jdk.version>1.6</jdk.version>
+        <mrp.plugin.version>1.0</mrp.plugin.version>
+    </properties>
+
+    <!-- 项目依赖 -->
+    <dependencies>
+    
+        <!-- JVM代理器构件 -->
+        <dependency>
+          <groupId>exp.libs</groupId>
+          <artifactId>jvm-agent</artifactId>
+          <version>1.0</version>
+        </dependency>
+            
+        <!-- CEP函数表达式解析构件 -->
+        <dependency>
+          <groupId>exp.libs</groupId>
+          <artifactId>jep</artifactId>
+          <version>3.3.1</version>
+        </dependency>
+        
+        <!-- ehcache缓存器 -->
+        <dependency>
+          <groupId>net.sf.ehcache</groupId>
+          <artifactId>ehcache</artifactId>
+          <version>2.9.1</version>
+        </dependency>
+        
+        <!-- swing美瞳构件 -->
+        <dependency>
+          <groupId>org.jb</groupId>
+          <artifactId>beauty-eye</artifactId>
+          <version>3.7</version>
+        </dependency>
+        
+        <!-- swing绘图构件 -->
+        <dependency>
+          <groupId>org.eclipse</groupId>
+          <artifactId>draw2d</artifactId>
+          <version>1.0.0</version>
+        </dependency>
+        <dependency>
+          <groupId>org.jgraph</groupId>
+          <artifactId>jGraph</artifactId>
+          <version>1.0.0</version>
+        </dependency>
+        <dependency>
+          <groupId>com.realpersist</groupId>
+          <artifactId>schemaeditor</artifactId>
+          <version>1.0.0</version>
+        </dependency>
+        
+        <!-- 二维码构件 -->
+        <dependency>
+          <groupId>com.google.zxing</groupId>
+          <artifactId>javase</artifactId>
+          <version>2.2</version>
+        </dependency>
+        <dependency>
+          <groupId>com.google.zxing</groupId>
+          <artifactId>core</artifactId>
+          <version>2.2</version>
+        </dependency>
+        
+        <!-- xml解析构件 -->
+        <dependency>
+          <groupId>org.dom4j</groupId>
+          <artifactId>dom4j</artifactId>
+          <version>1.6.1</version>
+        </dependency>
+        
+        <!-- ini解析构件 -->
+        <dependency>
+		  <groupId>org.dtools</groupId>
+		  <artifactId>javaini</artifactId>
+		  <version>1.1.0.0</version>
+		</dependency>
+    
+        <!-- 数据库连接池 -->
+        <dependency>
+          <groupId>com.cloudhopper.proxool</groupId>
+          <artifactId>proxool</artifactId>
+          <version>0.9.1</version>
+          <exclusions>
+            <exclusion>
+              <groupId>org.apache</groupId>
+              <artifactId>log4j</artifactId>
+            </exclusion>
+            <exclusion>
+              <artifactId>avalon-framework-api</artifactId>
+              <groupId>avalon-framework</groupId>
+            </exclusion>
+            <exclusion>
+              <artifactId>commons-logging</artifactId>
+              <groupId>commons-logging</groupId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+        <dependency>
+          <groupId>com.cloudhopper.proxool</groupId>
+          <artifactId>proxool-cglib</artifactId>
+          <version>0.9.1</version>
+        </dependency>
+        
+        <!-- 数据库驱动 -->
+        <dependency>
+          <groupId>redis.clients</groupId>
+          <artifactId>jedis</artifactId>
+          <version>2.9.0</version>
+        </dependency>
+        <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>5.1.29</version>
+        </dependency>
+        <dependency>
+          <groupId>org.xerial</groupId>
+          <artifactId>sqlite-jdbc</artifactId>
+          <version>3.7.2</version>
+        </dependency>
+        <dependency>
+          <groupId>com.oracle</groupId>
+          <artifactId>ojdbc</artifactId>
+          <version>14</version>
+        </dependency>
+         
+        <!-- apache-excel -->
+        <dependency>
+          <groupId>org.apache.poi</groupId>
+          <artifactId>poi-ooxml</artifactId>
+          <version>3.9</version>
+          <exclusions>
+            <exclusion>
+              <groupId>xml-apis</groupId>
+              <artifactId>xml-apis</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>stax</groupId>
+              <artifactId>stax-api</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>commons-codec</groupId>
+              <artifactId>commons-codec</artifactId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+        
+        <!-- 计划任务调度器 -->
+        <dependency>
+		  <groupId>org.quartz-scheduler</groupId>
+		  <artifactId>quartz</artifactId>
+		  <version>2.2.1</version>
+		</dependency>
+        
+        <!-- JSON工具包 -->
+        <dependency>
+          <groupId>net.sf.json-lib</groupId>
+          <artifactId>json-lib</artifactId>
+          <version>2.4</version>
+          <classifier>jdk15</classifier>
+        </dependency>
+        <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-xc</artifactId>
+          <version>1.9.9</version>
+        </dependency>
+        <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-smile</artifactId>
+          <version>1.9.9</version>
+        </dependency>
+        <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-mrbean</artifactId>
+          <version>1.9.9</version>
+        </dependency>
+        <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-jaxrs</artifactId>
+          <version>1.9.9</version>
+        </dependency>
+        <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-core-lgpl</artifactId>
+          <version>1.9.9</version>
+        </dependency>
+        <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-mapper-lgpl</artifactId>
+          <version>1.9.9</version>
+        </dependency>
+    
+        <!-- http -->
+        <dependency>
+          <groupId>commons-httpclient</groupId>
+          <artifactId>commons-httpclient</artifactId>
+          <version>3.1-rc1</version>
+          <exclusions>
+            <exclusion>
+              <groupId>commons-codec</groupId>
+              <artifactId>commons-codec</artifactId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+        <dependency>
+          <groupId>commons-net</groupId>
+          <artifactId>commons-net</artifactId>
+          <version>3.3</version>
+        </dependency>
+        
+        <!-- 轻量级密码术包: 用于提供对TLSv1.2协议支持 -->
+        <dependency>
+          <groupId>org.bouncycastle</groupId>
+          <artifactId>bcprov-jdk15on</artifactId>
+          <version>1.54</version>
+		</dependency>
+        
+        <!-- Base64编解码工具 -->
+        <dependency>
+          <groupId>sun.misc</groupId>
+          <artifactId>base64</artifactId>
+          <version>1.0</version>
+        </dependency>
+        
+        <!-- sftp -->
+        <dependency>
+          <groupId>jsch</groupId>
+          <artifactId>jsch</artifactId>
+          <version>0.1.29</version>
+        </dependency>
+        
+        <!-- mail -->
+        <dependency>
+           <groupId>javax.mail</groupId>
+           <artifactId>mail</artifactId>
+           <version>1.4.1</version>
+        </dependency>
+        <dependency>
+          <groupId>javax.activation</groupId>
+          <artifactId>activation</artifactId>
+          <version>1.1.1</version>
+        </dependency>
+        
+        <!-- apache-jms -->
+        <dependency>
+          <groupId>org.apache.activemq</groupId>
+          <artifactId>activemq-all</artifactId>
+          <version>5.4.2</version>
+        </dependency>
+        
+        <!-- apache-compress -->
+        <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-compress</artifactId>
+          <version>1.8.1</version>
+        </dependency>
+        
+        <!-- apache-db -->
+        <dependency>
+          <groupId>commons-dbutils</groupId>
+          <artifactId>commons-dbutils</artifactId>
+          <version>1.5</version>
+        </dependency>
+    
+        <!-- apache-base -->
+        <dependency>
+          <groupId>commons-io</groupId>
+          <artifactId>commons-io</artifactId>
+          <version>2.4</version>
+        </dependency>
+        <dependency>
+          <groupId>commons-logging</groupId>
+          <artifactId>commons-logging</artifactId>
+          <version>1.1.3</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-lang3</artifactId>
+          <version>3.3</version>
+        </dependency>
+        
+        <!-- OCR文字识别 -->
+        <dependency>
+          <groupId>com.sun.media</groupId>
+          <artifactId>jai-imageio</artifactId>
+          <version>1.1-alpha</version>
+          <classifier>alpha</classifier>
+        </dependency>
+        
+        <!-- tensorflow深度学习模型接口 -->
+        <dependency>
+          <groupId>org.tensorflow</groupId>
+          <artifactId>tensorflow</artifactId>
+          <version>1.6.0-rc1</version>
+        </dependency>
+        
+        <!-- tensorflow本地化接口（darwin+linux+win） -->
+        <dependency>     
+          <groupId>org.tensorflow</groupId>
+          <artifactId>libtensorflow_jni</artifactId>
+          <version>1.6.0-rc1</version>
+        </dependency>
+        
+        <!-- tensorflow本地化接口（精简：仅win） -->
+        <!-- dependency>
+          <groupId>org.tensorflow</groupId>
+          <artifactId>libtensorflow_jni-for-win</artifactId>
+          <version>1.6.0-rc1</version>
+          <classifier>rc1</classifier>
+        </dependency -->
+        
+        <!-- WEB-SOCKET -->
+        <dependency>
+          <groupId>org.java-websocket</groupId>
+          <artifactId>Java-WebSocket</artifactId>
+          <version>1.3.4</version>
+        </dependency>
+        
+        <!-- WEBKIT -->
+        <dependency>
+          <groupId>org.seleniumhq.selenium</groupId>
+          <artifactId>selenium-java</artifactId>
+          <version>2.53.0</version>
+          <exclusions>
+            <exclusion>
+              <groupId>org.seleniumhq.selenium</groupId>
+              <artifactId>selenium-chrome-driver</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.seleniumhq.selenium</groupId>
+              <artifactId>selenium-firefox-driver</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.seleniumhq.selenium</groupId>
+              <artifactId>selenium-ie-driver</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.seleniumhq.selenium</groupId>
+              <artifactId>selenium-safari-driver</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.seleniumhq.selenium</groupId>
+              <artifactId>selenium-edge-driver</artifactId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+        
+        <dependency>
+          <groupId>com.codeborne</groupId>
+          <artifactId>phantomjsdriver</artifactId>
+          <version>1.2.1</version>
+          <exclusions>
+            <exclusion>
+              <groupId>org.seleniumhq.selenium</groupId>
+              <artifactId>selenium-java</artifactId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+        
+        <dependency>
+          <groupId>org.seleniumhq.selenium</groupId>
+          <artifactId>selenium-chrome-driver</artifactId>
+          <version>2.44.0</version>
+        </dependency>
+
+        <dependency>
+          <groupId>org.seleniumhq.selenium</groupId>
+          <artifactId>selenium-htmlunit-driver</artifactId>
+          <version>2.44.0</version>
+        </dependency>
+        
+        <!-- soapUI: webservice-client -->
+        <dependency>
+          <groupId>net.webservices.client</groupId>
+          <artifactId>wsdl4j</artifactId>
+          <version>1.6.2</version>
+        </dependency>
+        <dependency>
+          <groupId>net.webservices.client</groupId>
+          <artifactId>jabref</artifactId>
+          <version>2.9.2</version>
+        </dependency>
+        <dependency>
+          <groupId>net.webservices.client</groupId>
+          <artifactId>soapui</artifactId>
+          <version>1.7.1</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.xmlbeans</groupId>
+          <artifactId>xmlbeans</artifactId>
+          <version>2.6.0</version>
+        </dependency>
+        <dependency>
+          <groupId>net.webservices.client</groupId>
+          <artifactId>soapui-xmlbeans</artifactId>
+          <version>1.7</version>
+        </dependency>
+        <dependency>
+          <groupId>commons-codec</groupId>
+          <artifactId>commons-codec</artifactId>
+          <version>1.8</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache</groupId>
+          <artifactId>log4j</artifactId>
+          <version>1.2.17</version>
+          <!-- scope>runtime</scope -->	<!-- wsdl等第三方包需要用 -->
+        </dependency>
+    
+        <!-- axis2-client -->
+        <dependency>
+          <groupId>org.apache.axis2</groupId>
+          <artifactId>axis2-adb</artifactId>
+          <version>1.6.2</version>
+          <exclusions>
+            <exclusion>
+              <groupId>org.apache.geronimo.specs</groupId>
+              <artifactId>geronimo-activation_1.1_spec</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.geronimo.specs</groupId>
+              <artifactId>geronimo-javamail_1.4_spec</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.james</groupId>
+              <artifactId>apache-mime4j-core</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.geronimo.specs</groupId>
+              <artifactId>geronimo-stax-api_1.0_spec</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>jaxen</groupId>
+              <artifactId>jaxen</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>commons-fileupload</groupId>
+              <artifactId>commons-fileupload</artifactId>
+            </exclusion>
+            <exclusion>
+              <artifactId>geronimo-jta_1.1_spec</artifactId>
+              <groupId>org.apache.geronimo.specs</groupId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.geronimo.specs</groupId>
+              <artifactId>geronimo-ws-metadata_2.0_spec</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>javax.ws.rs</groupId>
+              <artifactId>jsr311-api</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>javax.servlet</groupId>
+              <artifactId>servlet-api</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.woden</groupId>
+              <artifactId>woden-api</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.codehaus.woodstox</groupId>
+              <artifactId>wstx-asl</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.woden</groupId>
+              <artifactId>woden-impl-commons</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.woden</groupId>
+              <artifactId>woden-impl-dom</artifactId>
+            </exclusion>
+            <exclusion>
+              <groupId>org.apache.ws.commons.schema</groupId>
+              <artifactId>XmlSchema</artifactId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.ws.xmlschema</groupId>
+          <artifactId>xmlschema-core</artifactId>
+          <version>2.1.0</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.axis2</groupId>
+          <artifactId>axis2-transport-http</artifactId>
+          <version>1.6.2</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.axis2</groupId>
+          <artifactId>axis2-transport-local</artifactId>
+          <version>1.6.2</version>
+        </dependency>
+        
+        <!-- CXF3.0-client -->
+        <dependency>
+          <groupId>org.apache.cxf</groupId>
+          <artifactId>cxf-rt-frontend-jaxws</artifactId>
+          <version>3.0.1</version>
+          <exclusions>
+            <exclusion>
+              <artifactId>cxf-rt-ws-addr</artifactId>
+              <groupId>org.apache.cxf</groupId>
+            </exclusion>
+            <exclusion>
+              <artifactId>cxf-rt-bindings-xml</artifactId>
+              <groupId>org.apache.cxf</groupId>
+            </exclusion>
+            <exclusion>
+              <artifactId>xml-resolver</artifactId>
+              <groupId>xml-resolver</groupId>
+            </exclusion>
+            <exclusion>
+              <artifactId>FastInfoset</artifactId>
+              <groupId>com.sun.xml.fastinfoset</groupId>
+            </exclusion>
+            <exclusion>
+              <artifactId>activation</artifactId>
+              <groupId>javax.activation</groupId>
+            </exclusion>
+            <exclusion>
+              <artifactId>stax-api</artifactId>
+              <groupId>javax.xml.stream</groupId>
+            </exclusion>
+            <exclusion>
+              <artifactId>jaxb-api</artifactId>
+              <groupId>javax.xml.bind</groupId>
+            </exclusion>
+            <exclusion>
+              <artifactId>jaxb-impl</artifactId>
+              <groupId>com.sun.xml.bind</groupId>
+            </exclusion>
+          </exclusions>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.cxf</groupId>
+          <artifactId>cxf-rt-transports-http</artifactId>
+          <version>3.0.1</version>
+        </dependency>
+        
+        <!-- CXF-server -->
+        <dependency>
+	      <groupId>org.apache.cxf</groupId>
+	      <artifactId>cxf-rt-transports-http-jetty</artifactId>
+	      <version>3.0.1</version>
+	      <scope>runtime</scope>	<!-- 目前仅提供demo，不需要打包到项目 -->
+	    </dependency>
+
+        <!-- logback -->
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>1.7.5</version>
+        </dependency>
+        <dependency>
+          <groupId>ch.qos.logback</groupId>
+          <artifactId>logback-core</artifactId>
+          <version>1.0.13</version>
+        </dependency>
+        <dependency>
+          <groupId>ch.qos.logback</groupId>
+          <artifactId>logback-classic</artifactId>
+          <version>1.0.13</version>
+        </dependency>
+        <dependency>
+          <groupId>ch.qos.logback</groupId>
+          <artifactId>logback-access</artifactId>
+          <version>1.0.13</version>
+        </dependency>
+
+        <!-- logback condition -->
+        <dependency>
+          <groupId>org.codehaus.janino</groupId>
+          <artifactId>janino</artifactId>
+          <version>2.7.8</version>
+        </dependency>
+        <dependency>
+          <groupId>org.codehaus.janino</groupId>
+          <artifactId>commons-compiler</artifactId>
+          <version>2.7.8</version>
+        </dependency>
+
+        <!-- 单元测试 -->
+        <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.8.2</version>
+          <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <!-- 项目构建 -->
+    <build>
+        <plugins>
+
+            <!-- 指定项目JDK版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            
+            <!-- 版本打包插件，在dos跳转到项目根目录，依次执行（需保证没有引用快照、本地与SVN服务器内容完全一致）: 
+                1 发布基线到svn: mvn release:prepare 
+                2 发布引用到私服 : mvn release:perform -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <!-- 项目的SVN基线目录（需保证目录已存在） -->
+                    <tagBase>https://github.com/lyy289065406/exp-libs/tags</tagBase>
+                </configuration>
+            </plugin>
+
+            <!-- 测试插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.7.2</version>
+                <configuration>
+                    <!-- 解决控制台输出乱码问题 -->
+                    <forkMode>once</forkMode>
+                    <argLine>-Dfile.encoding=UTF-8</argLine>
+                    <systemProperties>
+                        <property>
+                            <name>net.sourceforge.cobertura.datafile</name>
+                            <value>target/cobertura/cobertura.ser</value>
+                        </property>
+                    </systemProperties>
+                    <!-- 项目打包时是否跳过d单元测试 -->
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+            
+            <!-- Ant插件：项目部署文件复制 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <id>ant-build</id>
+                        <phase>install</phase>
+                        <configuration>
+                            <target>
+                                <echo>拷贝项目配置文件</echo>
+                                <copy todir="${release.dir}/conf">
+                                    <fileset dir="conf" />
+                                </copy>
+                                <echo>拷贝文档</echo>
+                                <copy todir="${release.dir}/doc/04_维护文档">
+                                    <fileset dir="doc/04_维护文档"></fileset>
+                                </copy>
+                                <copy todir="${release.dir}/doc/06_使用文档">
+                                    <fileset dir="doc/06_使用文档"></fileset>
+                                </copy>
+                                <copy todir="${release.dir}/doc/07_演示文档">
+                                    <fileset dir="doc/07_演示文档"></fileset>
+                                </copy>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <!-- 项目发布插件 -->
+            <plugin>
+                <groupId>exp.libs</groupId>
+                <artifactId>mojo-release-plugin</artifactId>
+                <version>${mrp.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>mrp</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>install</goal>
+                        </goals>
+                        <configuration>
+                            <jarLibDir>./lib</jarLibDir>
+                            <mavenRepository>D:\mavenRepository</mavenRepository>
+                            <verClass>exp.libs.Version</verClass>
+                            <mainClass>exp.libs.Main</mainClass>
+                            <jdkParams>-javaagent:./lib/jvm-agent.jar</jdkParams>
+                            <noVerJarRegex>((exp-?libs-)|(jvm-agent)).*</noVerJarRegex>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- 打包源码: 项目发布基线版本时会自动打包源码，不要启用此插件，否则会失败 -->
+            <!-- plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1.2</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                            <goal>test-jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin -->
+
+            <!-- 打包javadoc: 项目发布基线版本时会自动打包javadoc，若报错不要启用此插件 -->
+            <!-- javadoc插件会强制使用GBK读取pom文件的内容, 若得到的html网页标题乱码,  -->
+            <!-- 则需要通过Run Configurations -> 自定义Maven install命令 -> Common -> Encoding:GBK 确保不会乱码 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <configuration>
+                    <aggregate>true</aggregate>
+                    <charset>UTF-8</charset>
+                    <encoding>UTF-8</encoding>
+                    <docencoding>UTF-8</docencoding>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <!-- 项目发布管理 -->
+    <distributionManagement>
+    
+        <!-- 私服地址 ，基线仓库 -->
+        <repository>
+            <id>Releases</id>
+            <url>http://127.0.0.1:8081/nexus/content/repositories/releases</url>
+        </repository>
+        
+        <!-- 私服地址 ，快照仓库 -->
+        <snapshotRepository>
+            <id>Snapshots</id>
+            <url>http://127.0.0.1:8081/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>
