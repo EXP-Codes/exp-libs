@@ -275,4 +275,12 @@ public abstract class LoopThread extends Thread {
 				" : Thread.start() has been removed.");
 	}
 	
+	/**
+	 * 获取线程名称
+	 * @return
+	 */
+	protected String NAME() {
+		return getName();
+	}
+	
 }
