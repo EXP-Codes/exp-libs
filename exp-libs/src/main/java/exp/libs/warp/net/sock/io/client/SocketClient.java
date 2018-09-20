@@ -232,6 +232,8 @@ public class SocketClient implements ISession {
 		if(socket != null) {
 			try {
 				socket.close();
+				log.info("客户端 [{}] 已断开Socket连接", sockConf.getAlias());
+				
 			} catch (Exception e) {
 				isClosed = false;
 				log.error("客户端 [{}] 断开Socket连接异常", sockConf.getAlias(), e);
