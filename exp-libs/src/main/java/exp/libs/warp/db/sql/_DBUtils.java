@@ -61,7 +61,7 @@ final class _DBUtils {
 	private static volatile _DBUtils instance;
 	
 	private _DBUtils() {
-		this.registeredDS = new HashSet<String>(2);
+		this.registeredDS = new HashSet<String>(4);
 	}
 	
 	protected static _DBUtils getInstn() {
@@ -82,15 +82,22 @@ final class _DBUtils {
 				isOk = true;
 				
 			} else {
-				try {
-					String proxoolXml = createProxoolXml(ds);
-					Reader reader = new StringReader(proxoolXml);
-					JAXPConfigurator.configure(reader, false);
-					registeredDS.add(ds.getId());
-					isOk = true;
-					
-				} catch (Exception e) {
-					log.error("注册数据源到proxool连接池失败.", e);
+				synchronized (registeredDS) {
+					if(registeredDS.contains(ds.getId())) {
+						isOk = true;
+						
+					} else {
+						try {
+							String proxoolXml = createProxoolXml(ds);
+							Reader reader = new StringReader(proxoolXml);
+							JAXPConfigurator.configure(reader, false);
+							registeredDS.add(ds.getId());
+							isOk = true;
+							
+						} catch (Exception e) {
+							log.error("注册数据源到proxool连接池失败.", e);
+						}
+					}
 				}
 			}
 		}
