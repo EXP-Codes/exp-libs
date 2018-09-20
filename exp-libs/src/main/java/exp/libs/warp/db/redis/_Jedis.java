@@ -105,7 +105,7 @@ class _Jedis implements _IJedis {
 	 * @return
 	 */
 	private Jedis _getJedis() {
-		if(autoCommit || !_isVaild(longJedis)) {
+		if(autoCommit || longJedis == null) {
 			longJedis = pool.getResource();
 		}
 		return longJedis;
@@ -176,6 +176,7 @@ class _Jedis implements _IJedis {
 		this.autoCommit = autoCommit;
 		if(autoCommit == false) {
 			_close(longJedis);
+			longJedis = null;
 		}
 	}
 
