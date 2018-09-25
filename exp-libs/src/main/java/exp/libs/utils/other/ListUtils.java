@@ -500,11 +500,37 @@ public class ListUtils {
 	 * @return 第一个元素(若队列为空则返回null)
 	 */
 	public static <E> E getFirst(List<E> list) {
-		E last = null;
+		E first = null;
 		if(list != null && !list.isEmpty()) {
-			last = list.get(0);
+			first = list.get(0);
 		}
-		return last;
+		return first;
+	}
+	
+	/**
+	 * 取队列中顺数第二个元素
+	 * @param list 队列
+	 * @return 第二个元素(若队列为空或长度不足则返回null)
+	 */
+	public static <E> E getSecond(List<E> list) {
+		E second = null;
+		if(list != null && list.size() > 1) {
+			second = list.get(1);
+		}
+		return second;
+	}
+	
+	/**
+	 * 取队列中倒数第二个元素
+	 * @param list 队列
+	 * @return 倒数第二个元素(若队列为空或长度不足则返回null)
+	 */
+	public static <E> E getSecondToLast(List<E> list) {
+		E secondToLast = null;
+		if(list != null && list.size() > 1) {
+			secondToLast = list.get(list.size() - 2);
+		}
+		return secondToLast;
 	}
 	
 	/**
