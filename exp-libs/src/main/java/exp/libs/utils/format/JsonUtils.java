@@ -238,26 +238,30 @@ public class JsonUtils {
 	 * @param list List对象
 	 * @return JSONArray对象
 	 */
-	public static JSONArray toJsonArray(Collection<String> list) {
+	public static <E> JSONArray toJsonArray(Collection<E> list) {
 		JSONArray array = new JSONArray();
 		if(list != null) {
-			for(String s : list) {
-				array.add(s);
+			for(E e : list) {
+				if(e != null) {
+					array.add(e.toString());
+				}
 			}
 		}
 		return array;
 	}
 	
 	/**
-	 * 把 String[]数组转换成JSONArray对象
-	 * @param array  String[]数组
+	 * 把数组转换成JSONArray对象
+	 * @param array 数组
 	 * @return JSONArray对象
 	 */
-	public static JSONArray toJsonArray(String[] array) {
+	public static <E> JSONArray toJsonArray(E[] array) {
 		JSONArray jsonArray = new JSONArray();
 		if(array != null) {
-			for(String s : array) {
-				jsonArray.add(s);
+			for(E e : array) {
+				if(e != null) {
+					jsonArray.add(e.toString());
+				}
 			}
 		}
 		return jsonArray;
