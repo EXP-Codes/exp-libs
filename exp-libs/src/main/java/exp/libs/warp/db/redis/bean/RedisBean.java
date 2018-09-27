@@ -61,7 +61,7 @@ public class RedisBean {
      * 若连接池已分配了最大的jedis实例，则此时连接池的状态为exhausted(耗尽)
      * </pre>
      */
-    protected final static int DEFAULT_MAX_TOTAL = 8;
+    protected final static int DEFAULT_MAX_TOTAL = 100;
     
 	private int maxTotal;
 	
