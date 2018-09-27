@@ -45,7 +45,7 @@
       >127.0.0.1:6379</sockets>
       <password caption="redis密码"></password>
       <timeout default="2000" caption="redis连接/请求超时时间" hint="单位:ms">2000</timeout>
-      <maxTotal default="8" caption="redis连接池最大连接数" hint="单位:ms">8</maxTotal>
+      <maxTotal default="100" caption="redis连接池最大连接数" hint="单位:ms">100</maxTotal>
       <maxIdle default="8" caption="redis连接池最大空闲连接数" hint="单位:ms">8</maxIdle>
       <maxWaitMillis default="-1" caption="当连接池已满时，等待可用连接的最大时间(-1表示永不超时)" hint="单位:ms">-1</maxWaitMillis>
       <testOnBorrow default="true" caption="从连接池提取连接前是否进行可用性测试" hint="可确保得到的连接均是可用">true</testOnBorrow>
