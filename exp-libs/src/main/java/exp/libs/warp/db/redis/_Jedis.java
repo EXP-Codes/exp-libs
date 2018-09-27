@@ -101,28 +101,6 @@ class _Jedis implements _IJedis {
 	}
 	
 	/**
-	 * 从连接池获取Redis连接
-	 * @return
-	 */
-	private Jedis _getJedis() {
-		if(autoCommit || longJedis == null) {
-			longJedis = pool.getResource();
-		}
-		return longJedis;
-	}
-	
-	/**
-	 * 把Redis连接返回连接池
-	 * @param jedis
-	 */
-	private void _close(Jedis jedis) {
-		if(autoCommit && jedis != null) {
-//			pool.returnResource(jedis);
-			jedis.close();
-		}
-	}
-
-	/**
 	 * 对Redis键统一转码，使得Jedis的 String接口 和 byte[]接口 所产生的键值最终一致。
 	 * (若不转码, 在redis编码与程序编码不一致的情况下, 即使键值相同, 
 	 * 	但使用String接口与byte[]接口存储到Redis的是两个不同的哈希表)
@@ -155,6 +133,44 @@ class _Jedis implements _IJedis {
 		return CharsetUtils.toStr(redisKey, CHARSET);
 	}
 	
+	/**
+	 * 从连接池获取Redis连接
+	 * @return
+	 */
+	private Jedis _getJedis() {
+		Jedis conn = null;
+		if(autoCommit) {
+			conn = pool.getResource();
+			
+		} else if(longJedis == null || !longJedis.isConnected()) {
+			conn = pool.getResource();
+			longJedis = conn;
+			
+		} else {
+			conn = longJedis;
+		}
+		return conn;
+	}
+	
+	/**
+	 * 把Redis连接返回连接池
+	 * @param jedis
+	 */
+	private void _close(Jedis jedis) {
+		if(!autoCommit && jedis == longJedis) {
+			return;
+		}
+		
+		if(jedis != null) {
+			try {
+//				pool.returnResource(jedis);
+				jedis.close();
+			} catch(Exception e) {
+				// UNDO 重复关闭会抛出运行时异常
+			}
+		}
+	}
+
 	@Override
 	public boolean isVaild() {
 		Jedis jedis = _getJedis();
@@ -174,7 +190,7 @@ class _Jedis implements _IJedis {
 	@Override
 	public void setAutoCommit(boolean autoCommit) {
 		this.autoCommit = autoCommit;
-		if(autoCommit == false) {
+		if(autoCommit == true) {
 			_close(longJedis);
 			longJedis = null;
 		}
@@ -187,7 +203,7 @@ class _Jedis implements _IJedis {
 
 	@Override
 	public void commit() {
-		setAutoCommit(false);
+		setAutoCommit(true);
 	}
 	
 	@Override
