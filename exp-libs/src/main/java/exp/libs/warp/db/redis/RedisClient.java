@@ -35,6 +35,7 @@ import exp.libs.warp.db.redis.bean.RedisBean;
  * </PRE>
  * 
  * FIXME 哨兵模式需要连接到哨兵机，又哨兵机分配当前可用的主机，使用 JedisSentinelPool 连接池
+ * 详见 https://blog.csdn.net/shmilychan/article/details/73433804
  * 
  * <br/><B>PROJECT : </B> exp-libs
  * <br/><B>SUPPORT : </B> <a href="http://www.exp-blog.com" target="_blank">www.exp-blog.com</a> 
