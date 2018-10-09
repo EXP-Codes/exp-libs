@@ -53,6 +53,9 @@ public class TopoGraph extends Graph {
 	}
 
 	public Node getSrc() {
+		if(src == Node.NULL) {
+			src = getNode(0);
+		}
 		return src;
 	}
 
@@ -61,6 +64,9 @@ public class TopoGraph extends Graph {
 	}
 
 	public Node getSnk() {
+		if(snk == Node.NULL) {
+			snk = getNode(nodeSize() - 1);
+		}
 		return snk;
 	}
 
