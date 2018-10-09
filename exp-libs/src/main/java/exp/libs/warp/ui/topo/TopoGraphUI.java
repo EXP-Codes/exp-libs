@@ -190,6 +190,11 @@ public class TopoGraphUI extends PopChildWindow {
 		
 		// BFS遍历[拓扑图]
 		for(int idx = 0; idx < size; idx++) {
+			if(idx >= queue.size()) {
+				SwingUtils.warn("输入的拓扑图不是连通图， 部分节点无法绘制");
+				break;
+			}
+			
 			Node edgeSrc = queue.get(idx);
 			List<Node> edgeSnks = edgeSrc.getNeighborList();
 			
