@@ -16,5 +16,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		LogUtils.loadLogBackConfig();
+		System.out.println("Copyright(C) By EXP - http://www.exp-blog.com");
 	}
 }
