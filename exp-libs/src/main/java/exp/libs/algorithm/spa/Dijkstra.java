@@ -21,17 +21,23 @@ import java.util.Set;
  */
 public class Dijkstra {
 
+	// 节点间距为最大值时表示不可达
 	public final static int MAX_WEIGHT = Integer.MAX_VALUE;
 	
+	// 节点数
 	private int size;
 	
+	// 邻接矩阵
 	private int[][] matrix;
 	
+	// 源点ID
 	private int srcId;
 	
+	// sDists[i] : 源点到节点i的距离
 	private int[] sDists;
 	
-	private _IDPath[] sPaths;
+	// sNode[i] : 松弛节点： 源点通过 节点sNode[i] 到达 节点i 使得路径松弛
+	private int[] sNode;
 	
 	public Dijkstra(int[][] matrix) {
 		this.matrix = (matrix == null ? new int[0][0] : matrix);
@@ -42,7 +48,7 @@ public class Dijkstra {
 	private void clear() {
 		this.srcId = -1;
 		this.sDists = new int[size];
-		this.sPaths = new _IDPath[size];
+		this.sNode = new int[size];
 	}
 	
 	private boolean inRange(final int idx) {
@@ -62,6 +68,7 @@ public class Dijkstra {
 		tabu = (tabu == null ? new HashSet<Integer>() : tabu);
 		for(int i = 0; i < size; i++) {
 			sDists[i] = matrix[srcId][i];
+			sNode[i] = i;
 		}
 		
 		boolean[] visit = new boolean[size];
@@ -92,10 +99,7 @@ public class Dijkstra {
 				int relex = add(sDists[next], matrix[next][i]);
 				if(sDists[i] > relex) {
 					sDists[i] = relex;
-					if(sPaths[i] == null) {
-						sPaths[i] = new _IDPath();
-					}
-					sPaths[i].add(next);
+					sNode[i] = next;
 				}
 			}
 		}
@@ -110,18 +114,12 @@ public class Dijkstra {
 		List<Integer> routeIds = new LinkedList<Integer>();
 		if(inRange(srcId) && getShortPathWeight(snkId) < MAX_WEIGHT) {
 			int endId = snkId;
-			routeIds.add(0, endId);
 			do {
-				_IDPath idPath = sPaths[endId];
-				if(idPath != null && !idPath.isEmpty()) {
-					List<Integer> ids = idPath.getIds();
-					for(int i = ids.size() - 1; i >= 0; i--) {
-						int id = ids.get(i);
-						routeIds.add(0, id);
-						endId = id;
-					}
+				routeIds.add(0, endId);
+				if(endId != sNode[endId]) {
+					endId = sNode[endId];
 				} else {
-					break;	// 源点的IDPath必定为null
+					break;
 				}
 			} while(true);
 			routeIds.add(0, srcId);
