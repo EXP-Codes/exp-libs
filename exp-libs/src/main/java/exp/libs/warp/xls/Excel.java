@@ -309,6 +309,27 @@ public class Excel {
 	}
 	
 	/**
+	 * 克隆Sheet页
+	 * @param index 被克隆的Sheet页索引（从0开始）
+	 * @param name 所克隆的Sheet页名称
+	 * @return Sheet页对象（若克隆失败则返回Sheet.NULL对象）
+	 */
+	public Sheet cloneSheet(int index, String name) {
+		Sheet sheet = Sheet.NULL;
+		try {
+			org.apache.poi.ss.usermodel.Sheet poiSheet = 
+					workbook.cloneSheet(index);
+			int idx = workbook.getSheetIndex(poiSheet);
+			workbook.setSheetName(idx, name);
+			sheet = _getSheet(poiSheet);
+			
+		} catch(Exception e) {
+			log.error("克隆第 [{}] 个sheet页为 [{}] 失败", index, name, e);
+		}
+		return sheet;
+	}
+	
+	/**
 	 * <PRE>
 	 * 根据填充的数据，创建多个Sheet分页.
 	 * 分页名称为"sheetNamePrefix-pageIdx", 每页行数不超过pageRowLimit.
