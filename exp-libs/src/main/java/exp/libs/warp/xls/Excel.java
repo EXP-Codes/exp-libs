@@ -330,6 +330,76 @@ public class Excel {
 	}
 	
 	/**
+	 * 隐藏Sheet页
+	 * @param name 被隐藏的Sheet页名称
+	 * @return true:隐藏成功; false:隐藏失败
+	 */
+	public boolean hideSheet(String name) {
+		return setSheetHidden(name, true);
+	}
+	
+	/**
+	 * 隐藏Sheet页
+	 * @param index 被隐藏的Sheet页索引
+	 * @return true:隐藏成功; false:隐藏失败
+	 */
+	public boolean hideSheet(int index) {
+		return setSheetHidden(index, true);
+	}
+	
+	/**
+	 * 取消隐藏Sheet页
+	 * @param name 取消隐藏的Sheet页名称
+	 * @return true:取消隐藏成功; false:取消隐藏失败
+	 */
+	public boolean showSheet(String name) {
+		return setSheetHidden(name, false);
+	}
+	
+	/**
+	 * 取消隐藏Sheet页
+	 * @param index 取消隐藏的Sheet页索引
+	 * @return true:取消隐藏成功; false:取消隐藏失败
+	 */
+	public boolean showSheet(int index) {
+		return setSheetHidden(index, false);
+	}
+	
+	/**
+	 * 设置Sheet页测隐藏属性
+	 * @param name Sheet页名称
+	 * @return true:设置成功; false:设置失败
+	 */
+	private boolean setSheetHidden(String name, boolean hide) {
+		boolean isOk = false;
+		try {
+			org.apache.poi.ss.usermodel.Sheet poiSheet = workbook.getSheet(name);
+			int index = workbook.getSheetIndex(poiSheet);
+			workbook.setSheetHidden(index, hide);
+			
+		} catch(Exception e) {
+			log.error("设置sheet页 [{}] 的隐藏状态失败", name, e);
+		}
+		return isOk;
+	}
+	
+	/**
+	 * 设置Sheet页测隐藏属性
+	 * @param index Sheet页索引（从0开始）
+	 * @return true:设置成功; false:设置失败
+	 */
+	private boolean setSheetHidden(int index, boolean hide) {
+		boolean isOk = false;
+		try {
+			workbook.setSheetHidden(index, hide);
+			
+		} catch(Exception e) {
+			log.error("设置第 [{}] 个sheet页的隐藏状态失败", index, e);
+		}
+		return isOk;
+	}
+	
+	/**
 	 * <PRE>
 	 * 根据填充的数据，创建多个Sheet分页.
 	 * 分页名称为"sheetNamePrefix-pageIdx", 每页行数不超过pageRowLimit.
