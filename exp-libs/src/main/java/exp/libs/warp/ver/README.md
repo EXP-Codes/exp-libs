@@ -1,12 +1,10 @@
 ## 项目版本管理组件
 
---------
-
-## 组件特色
-
 - 通过UI便捷管理项目版本信息
 - 为 [`Maven项目发布插件 mojo-release-plugin`](https://github.com/lyy289065406/mojo-release-plugin) 的版本信息打印脚本提供数据支持
 - 为 [`自动化升级插件 auto-upgrader`](https://github.com/lyy289065406/auto-upgrader) 提供版本管理支持
+
+--------
 
 ## 使用示例
 
@@ -45,4 +43,22 @@ public class Version {
 ```
 
 ## 运行效果
+
+
+图片....
+
+
+　若需要获取所有历史版本信息，可以这样做：
+
+```java
+public static void main(String[] args) {
+	boolean onlyCurVersion = false;	// 仅当前版本(即最新版本)
+	boolean detaiHistoty = true;	// 打印历史版本升级内容详单
+	String hisVers = VersionMgr.getVersionInfo(false, true);
+	System.out.println(hisVers);
+}
+```
+
+　这样就会列印所有历史版本信息：
+
 
