@@ -45,8 +45,13 @@ public class Version {
 ## 运行效果
 
 
-图片....
+![项目信息管理](https://raw.githubusercontent.com/lyy289065406/exp-libs/master/exp-libs/doc/07_%E6%BC%94%E7%A4%BA%E6%96%87%E6%A1%A3/01-%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86.png)
 
+![查看某个历史版本信息](https://raw.githubusercontent.com/lyy289065406/exp-libs/master/exp-libs/doc/07_%E6%BC%94%E7%A4%BA%E6%96%87%E6%A1%A3/02-%E6%9F%A5%E7%9C%8B%E6%9F%90%E4%B8%AA%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF.png)
+
+![查看当前版本信息](https://raw.githubusercontent.com/lyy289065406/exp-libs/master/exp-libs/doc/07_%E6%BC%94%E7%A4%BA%E6%96%87%E6%A1%A3/03-%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF.png)
+
+![列印所有历史版本信息](https://raw.githubusercontent.com/lyy289065406/exp-libs/master/exp-libs/doc/07_%E6%BC%94%E7%A4%BA%E6%96%87%E6%A1%A3/04-%E5%88%97%E5%8D%B0%E6%89%80%E6%9C%89%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%E4%BF%A1%E6%81%AF.png)
 
 　若需要获取所有历史版本信息，可以这样做：
 
