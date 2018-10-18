@@ -9,7 +9,7 @@
 ## 使用示例
 
 
-　新建一个main入口类，然后直接运行 `VersionMgr.exec()` 方法即可： 
+　在项目中新建一个main入口类（如`Version.java`），然后直接运行 `exp.libs.warp.ver.VersionMgr.exec()` 方法即可： 
 
 ```java
 import exp.libs.utils.other.LogUtils;
