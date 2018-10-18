@@ -1,5 +1,19 @@
-package exp.libs;
+## 项目版本管理组件
 
+--------
+
+## 组件特色
+
+- 通过UI便捷管理项目版本信息
+- 为 [`Maven项目发布插件 mojo-release-plugin`](https://github.com/lyy289065406/mojo-release-plugin) 的版本信息打印脚本提供数据支持
+- 为 [`自动化升级插件 auto-upgrader`](https://github.com/lyy289065406/auto-upgrader) 提供版本管理支持
+
+## 使用示例
+
+
+　新建一个main入口类，然后直接运行 `VersionMgr.exec()` 方法即可： 
+
+```java
 import exp.libs.utils.other.LogUtils;
 import exp.libs.warp.ver.VersionMgr;
 
@@ -14,7 +28,7 @@ import exp.libs.warp.ver.VersionMgr;
  * @author    EXP: 272629724@qq.com
  * @since     jdk版本：jdk1.6
  */
-final class Version {
+public class Version {
 
 	/**
 	 * 版本管理入口, 任何项目均不需修改此代码.
@@ -28,3 +42,7 @@ final class Version {
 	}
 	
 }
+```
+
+## 运行效果
+
