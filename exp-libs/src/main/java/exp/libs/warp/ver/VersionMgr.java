@@ -130,20 +130,20 @@ final public class VersionMgr {
 	/**
 	 * 获取版本信息
 	 * @param onlyCurVersion 仅当前版本(即最新版本)
-	 * @param detaiHistoty 是否打印历史版本升级内容详单 (仅onlyCurVersion=false时有效)
+	 * @param detailHistoty 是否打印历史版本升级内容详单 (仅onlyCurVersion=false时有效)
 	 * @return 版本信息
 	 */
-	public static String getVersionInfo(boolean onlyCurVersion, boolean detaiHistoty) {
-		return getInstn()._getVersionInfo(onlyCurVersion, detaiHistoty);
+	public static String getVersionInfo(boolean onlyCurVersion, boolean detailHistoty) {
+		return getInstn()._getVersionInfo(onlyCurVersion, detailHistoty);
 	}
 	
 	/**
 	 * 获取版本信息
 	 * @param onlyCurVersion 仅当前版本(即最新版本)
-	 * @param detaiHistoty 是否打印历史版本升级内容详单 (仅onlyCurVersion=false时有效)
+	 * @param detailHistoty 是否打印历史版本升级内容详单 (仅onlyCurVersion=false时有效)
 	 * @return 版本信息
 	 */
-	private String _getVersionInfo(boolean onlyCurVersion, boolean detaiHistoty) {
+	private String _getVersionInfo(boolean onlyCurVersion, boolean detailHistoty) {
 		if(StrUtils.isNotEmpty(curVerInfo)) {
 			return curVerInfo;
 		}
@@ -154,7 +154,7 @@ final public class VersionMgr {
 			
 			if(onlyCurVersion == false) {
 				verInfo.append(Delimiter.CRLF).append(Delimiter.CRLF);
-				verInfo.append(_VerDBMgr.getInstn().toHisVerInfos(detaiHistoty));
+				verInfo.append(_VerDBMgr.getInstn().toHisVerInfos(detailHistoty));
 			}
 		}
 		curVerInfo = verInfo.toString();
