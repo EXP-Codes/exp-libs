@@ -61,7 +61,7 @@ public class Version {
 public static void main(String[] args) {
 	boolean onlyCurVersion = false;	// 仅当前版本(即最新版本)
 	boolean detailHistoty = true;	// 打印历史版本升级内容详单
-	String hisVers = VersionMgr.getVersionInfo(false, true);
+	String hisVers = VersionMgr.getVersionInfo(onlyCurVersion, detailHistoty);
 	System.out.println(hisVers);
 }
 ```
