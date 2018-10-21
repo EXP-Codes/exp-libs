@@ -195,6 +195,10 @@
               <groupId>org.codehaus.janino</groupId>
               <artifactId>commons-compiler</artifactId>
             </exclusion>
+            <exclusion>
+              <groupId>org.dtools</groupId>
+              <artifactId>javaini</artifactId>
+            </exclusion>
           </exclusions>
         </dependency>
     </dependencies>

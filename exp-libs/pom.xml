@@ -38,7 +38,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <release.dir>${project.build.directory}/${project.artifactId}-${project.version}</release.dir>
         <jdk.version>1.6</jdk.version>
-        <mrp.plugin.version>1.0-SNAPSHOT</mrp.plugin.version>
+        <mrp.plugin.version>1.0</mrp.plugin.version>
     </properties>
 
     <!-- 项目依赖 -->
