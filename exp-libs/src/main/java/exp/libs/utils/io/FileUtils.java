@@ -13,7 +13,9 @@ import org.slf4j.LoggerFactory;
 
 import exp.libs.envm.FileType;
 import exp.libs.utils.num.BODHUtils;
+import exp.libs.utils.num.IDUtils;
 import exp.libs.utils.os.OSUtils;
+import exp.libs.utils.other.PathUtils;
 import exp.libs.utils.other.StrUtils;
 import exp.libs.utils.verify.RegexUtils;
 import exp.libs.warp.cmd.CmdUtils;
@@ -1434,6 +1436,34 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 	public static String delForbidCharInFileName(String fileName, String symbol) {
 		String name = (fileName == null ? "" : fileName);
 		return name.replaceAll("[/\\\\:\\*\"<>\\|\\?\r\n\t\0]", symbol);
+	}
+	
+	/**
+	 * 创建一个临时文件（进程结束后自动删除）
+	 * @return 临时文件路径
+	 */
+	public static String createTmpFile() {
+		return createTmpFile(IDUtils.getUUID());
+	}
+	
+	/**
+	 * 创建一个临时文件（进程结束后自动删除）
+	 * @param fileName 临时文件名称
+	 * @return 临时文件路径
+	 */
+	public static String createTmpFile(String fileName) {
+		if(StrUtils.isTrimEmpty(fileName)) {
+			fileName = IDUtils.getUUID();
+		}
+		
+		String tmpPath = PathUtils.combine(PathUtils.getSysTmpDir(), fileName);
+		if(!FileUtils.exists(tmpPath)) {
+			File tmpFile = FileUtils.createFile(tmpPath);
+			if(tmpFile != null) {
+				tmpFile.deleteOnExit(); // 程序终止时删除该临时文件
+			}
+		}
+		return tmpPath;
 	}
 	
 }
