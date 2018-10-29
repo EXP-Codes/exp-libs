@@ -155,42 +155,32 @@ public class INIConfig {
 	}
 	
 	/**
-	 * 删除默认分组下的一个键值对
+	 * 获取默认分组下的键值
 	 * @param key 键名
+	 * @return 键值
 	 */
-	public void delKV(String key) {
-		delKV(DEFAULT_SECTION, key);
+	public String getVal(String key) {
+		return getVal(DEFAULT_SECTION, key);
 	}
 	
 	/**
-	 * 删除指定分组下的一个键值对
+	 * 获取指定分组下的键值
 	 * @param section 分组名
 	 * @param key 键名
+	 * @return 键值（当键名不存在时，会返回null）
 	 */
-	public void delKV(String section, String key) {
-		IniSection iniSection = iniFile.getSection(section);
-		if(iniSection != null) {
-			iniSection.removeItem(key);
+	public String getVal(String section, String key) {
+		String val = null;
+		if(StrUtils.isNotTrimEmpty(section, key)) {
+			IniSection iniSection = iniFile.getSection(section);
+			if(iniSection != null) {
+				IniItem iniItem = iniSection.getItem(key);
+				val = iniItem.getValue();
+			}
 		}
+		return val;
 	}
-	
-	/**
-	 * 删除指定若干个分组、及其下的所有键值对
-	 * @param sections 分组名
-	 */
-	public void delSections(String... sections) {
-		if(ListUtils.isNotEmpty(sections)) {
-			iniFile.removeSections(sections);
-		}
-	}
-	
-	/**
-	 * 清空ini中所有分组和键值对配置项
-	 */
-	public void delAll() {
-		iniFile.removeAll();
-	}
-	
+
 	/**
 	 * 获取指定分组下的所有键值对
 	 * @param section 分组名
@@ -234,6 +224,43 @@ public class INIConfig {
 			}
 		}
 		return kvs;
+	}
+	
+	/**
+	 * 删除默认分组下的一个键值对
+	 * @param key 键名
+	 */
+	public void delKV(String key) {
+		delKV(DEFAULT_SECTION, key);
+	}
+	
+	/**
+	 * 删除指定分组下的一个键值对
+	 * @param section 分组名
+	 * @param key 键名
+	 */
+	public void delKV(String section, String key) {
+		IniSection iniSection = iniFile.getSection(section);
+		if(iniSection != null) {
+			iniSection.removeItem(key);
+		}
+	}
+	
+	/**
+	 * 删除指定若干个分组、及其下的所有键值对
+	 * @param sections 分组名
+	 */
+	public void delSections(String... sections) {
+		if(ListUtils.isNotEmpty(sections)) {
+			iniFile.removeSections(sections);
+		}
+	}
+	
+	/**
+	 * 清空ini中所有分组和键值对配置项
+	 */
+	public void delAll() {
+		iniFile.removeAll();
 	}
 	
 }

@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import exp.libs.Config;
 import exp.libs.envm.Charset;
 import exp.libs.envm.DBType;
 import exp.libs.envm.Delimiter;
@@ -42,7 +43,7 @@ class _VerDBMgr {
 	protected final static String AUTHOR = "最后责任人";
 
 	/** 版本信息库的脚本 */
-	private final static String VER_DB_SCRIPT = "/exp/libs/warp/ver/VERSION-INFO-DB.sql";
+	private final static String VER_DB_SCRIPT = Config.getInstn().VER_DB_SCRIPT();
 	
 	/** 版本库库名 */
 	private final static String DB_NAME = ".verinfo";
