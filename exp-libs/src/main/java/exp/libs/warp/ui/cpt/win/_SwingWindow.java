@@ -17,6 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import exp.libs.Config;
 import exp.libs.utils.num.NumUtils;
 import exp.libs.warp.ui.SwingUtils;
 import exp.libs.warp.ui.cpt.tray.SystemTray;
@@ -35,7 +36,7 @@ import exp.libs.warp.ui.cpt.tray.SystemTray;
 abstract class _SwingWindow extends JFrame {
 
 	/** 托盘图标的图片文件位置 */
-	private final static String ICON_RES = "/exp/libs/warp/ui/cpt/win/tray.png";
+	private final static String ICON_RES = Config.getInstn().ICON_RES();
 	
 	/** 最小化状态：未初始化 */
 	protected final static int UNINIT = 0;

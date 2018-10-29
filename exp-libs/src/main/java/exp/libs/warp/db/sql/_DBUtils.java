@@ -28,6 +28,7 @@ import org.logicalcobwebs.proxool.configuration.JAXPConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import exp.libs.Config;
 import exp.libs.envm.Charset;
 import exp.libs.utils.io.FileUtils;
 import exp.libs.utils.os.JavaUtils;
@@ -52,9 +53,9 @@ final class _DBUtils {
 	/** 日志器 */
 	private final static Logger log = LoggerFactory.getLogger(_DBUtils.class);
 	
-	private final static String TEMPLATE_DB_BEAN = "/exp/libs/warp/db/sql/db-bean.tpl";
+	private final static String TEMPLATE_DB_BEAN = Config.getInstn().TEMPLATE_DB_BEAN();
 	
-	private final static String TEMPLATE_PROXOOL = "/exp/libs/warp/db/sql/proxool.tpl";
+	private final static String TEMPLATE_PROXOOL = Config.getInstn().TEMPLATE_PROXOOL();
 	
 	private Set<String> registeredDS;
 	
