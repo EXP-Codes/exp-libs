@@ -113,9 +113,9 @@ public class HttpURLUtils extends HttpUtils {
 			byte[] bytes = CharsetUtils.toBytes(kvs, charset);
 			OutputStream out = conn.getOutputStream();
 			out.write(bytes);
-			
-			response = responseAsString(conn, charset);
 		}
+		
+		response = responseAsString(conn, charset);
 		close(conn);
 		return response;
 	}
@@ -305,9 +305,9 @@ public class HttpURLUtils extends HttpUtils {
 			byte[] bytes = CharsetUtils.toBytes(kvs, charset);
 			OutputStream out = conn.getOutputStream();
 			out.write(bytes);
-			
-			isOk = responseAsRes(conn, savePath);
 		}
+		
+		isOk = responseAsRes(conn, savePath);
 		close(conn);
 		return isOk;
 	}
