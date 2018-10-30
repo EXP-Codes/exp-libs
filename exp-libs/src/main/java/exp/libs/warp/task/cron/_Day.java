@@ -93,7 +93,7 @@ public class _Day extends __TimeUnit {
 	 * @param day
 	 * @return
 	 */
-	public String withAfterday(int day) {
+	public String withAfterDay(int day) {
 		return !_checkRange(day) ? getSubExpression() : 
 			setSubExpression(StrUtils.concat(day, C));
 	}
