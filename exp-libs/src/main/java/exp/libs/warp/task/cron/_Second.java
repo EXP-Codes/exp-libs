@@ -33,10 +33,10 @@ import exp.libs.utils.other.StrUtils;
 public class _Second extends __TimeUnit {
 
 	/** [秒] 的最小值 */
-	protected final static int MIN = 0;
+	public final static int MIN = 0;
 	
 	/** [秒] 的最大值 */
-	protected final static int MAX = 59;
+	public final static int MAX = 59;
 	
 	/**
 	 * 构造函数
@@ -105,7 +105,7 @@ public class _Second extends __TimeUnit {
 			String[] step = subExpression.split(STEP);
 			int from = NumUtils.toInt(step[0], -1);
 			int interval = NumUtils.toInt(step[1], -1);
-			isOk = inRange(from) && inRange(interval);
+			isOk = inRange(from) && interval > 0;
 		
 		}
 		return isOk;

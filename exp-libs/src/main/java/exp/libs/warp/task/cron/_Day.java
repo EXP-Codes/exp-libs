@@ -33,10 +33,10 @@ import exp.libs.utils.other.StrUtils;
 public class _Day extends __TimeUnit {
 
 	/** [日期] 的最小值 */
-	protected final static int MIN = 1;
+	public final static int MIN = 1;
 	
 	/** [日期] 的最大值 */
-	protected final static int MAX = 31;
+	public final static int MAX = 31;
 	
 	/**
 	 * 构造函数
@@ -156,7 +156,7 @@ public class _Day extends __TimeUnit {
 			String[] step = subExpression.split(STEP);
 			int from = NumUtils.toInt(step[0], -1);
 			int interval = NumUtils.toInt(step[1], -1);
-			isOk = inRange(from) && inRange(interval);
+			isOk = inRange(from) && interval > 0;
 		
 		}
 		return isOk;

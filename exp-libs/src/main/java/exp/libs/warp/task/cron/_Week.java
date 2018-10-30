@@ -60,10 +60,10 @@ public class _Week extends __TimeUnit {
 	}
 	
 	/** [星期] 的最小值 */
-	protected final static int MIN = 1;
+	public final static int MIN = 1;
 	
 	/** [星期] 的最大值 */
-	protected final static int MAX = 7;
+	public final static int MAX = 7;
 	
 	/**
 	 * 构造函数
@@ -272,7 +272,7 @@ public class _Week extends __TimeUnit {
 			String[] step = subExpression.split(STEP);
 			int from = NumUtils.toInt(step[0], -1);
 			int interval = NumUtils.toInt(step[1], -1);
-			isOk = inRange(from) && inRange(interval);
+			isOk = inRange(from) && interval > 0;
 			
 		// 子表达式为: [x#y]
 		} else if(subExpression.matches(

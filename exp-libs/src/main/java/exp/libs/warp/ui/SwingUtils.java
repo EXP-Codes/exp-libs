@@ -252,6 +252,20 @@ public class SwingUtils {
 	}
 	
 	/**
+	 * 为组件添加一个面板.
+	 * 	布局风格为BorderLayout, 组件的布局位置为CENTER
+	 * @param component 组件
+	 * @return 装入组件的面板
+	 */
+	public static JPanel addPanel(Component component) {
+		JPanel panel = new JPanel(new BorderLayout());
+		if(component != null) {
+			panel.add(component, BorderLayout.CENTER);
+		}
+		return panel;
+	}
+	
+	/**
 	 * 获取配对组件面板（提示组件+输入组件）
 	 *  布局风格为BorderLayout: 提示组件WEST, 输入组件CENTER
 	 * @param label 提示组件的提示信息 ( 自动添加 [...] 包围 )

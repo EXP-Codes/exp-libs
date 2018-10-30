@@ -33,10 +33,10 @@ import exp.libs.utils.other.StrUtils;
 public class _Year extends __TimeUnit {
 
 	/** [年份] 的最小值 */
-	protected final static int MIN = 1970;
+	public final static int MIN = 1970;
 	
 	/** [年份] 的最大值 */
-	protected final static int MAX = 2099;
+	public final static int MAX = 2099;
 	
 	/**
 	 * 构造函数
@@ -113,7 +113,7 @@ public class _Year extends __TimeUnit {
 			String[] step = subExpression.split(STEP);
 			int from = NumUtils.toInt(step[0], -1);
 			int interval = NumUtils.toInt(step[1], -1);
-			isOk = inRange(from) && inRange(interval);
+			isOk = inRange(from) && interval > 0;
 		
 		}
 		return isOk;
