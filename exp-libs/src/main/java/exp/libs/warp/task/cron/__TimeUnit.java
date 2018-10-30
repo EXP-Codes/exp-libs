@@ -80,7 +80,7 @@ abstract class __TimeUnit {
 	
 	/**
 	 * <PRE>
-	 * 特殊值：井号(#)：x/y 表示第y个星期x。
+	 * 特殊值：井号(#)：x#y 表示第y个星期x。
 	 * 该字符只能在星期字段中使用，如: 
 	 * 	6#3表示当月的第三个星期五(6表示星期五，#3表示当前的第三个);
 	 * 	而4#5表示当月的第五个星期三，假设当月没有第五个星期三，忽略不触发。
@@ -231,7 +231,7 @@ abstract class __TimeUnit {
 	 * @return 当前时间字段的子表达式
 	 */
 	public String withStep(int from, int interval) {
-		return !_checkRange(from, interval) ? subExpression : 
+		return !_checkRange(from) || interval <= 0 ? subExpression : 
 				setSubExpression(StrUtils.concat(from, STEP, interval));
 	}
 

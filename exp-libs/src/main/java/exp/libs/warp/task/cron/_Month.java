@@ -70,10 +70,10 @@ public class _Month extends __TimeUnit {
 	}
 	
 	/** [月份] 的最小值 */
-	protected final static int MIN = 1;
+	public final static int MIN = 1;
 	
 	/** [月份] 的最大值 */
-	protected final static int MAX = 12;
+	public final static int MAX = 12;
 	
 	/**
 	 * 构造函数
@@ -214,7 +214,7 @@ public class _Month extends __TimeUnit {
 			String[] step = subExpression.split(STEP);
 			int from = NumUtils.toInt(step[0], -1);
 			int interval = NumUtils.toInt(step[1], -1);
-			isOk = inRange(from) && inRange(interval);
+			isOk = inRange(from) && interval > 0;
 		
 		}
 		return isOk;
