@@ -436,7 +436,7 @@ public class TaskScheduler {
 	 * 		[接口Job/JobNonCurrent] 的实现类可在 [execute方法] 中提取这些参数:
 	 * 		JobExecutionContext.getJobDetail().getJobDataMap().get("key")
 	 * @param cronExpression 定义任务触发时机的corn表达式
-	 * @return true:添加成功; false:添加失败
+	 * @return true:修改成功; false:修改失败
 	 */
 	public boolean modify(String taskName, Job job, 
 			Map<?, ?> params, String cronExpression) {
@@ -451,7 +451,7 @@ public class TaskScheduler {
 	 * 		[接口Job/JobNonCurrent] 的实现类可在 [execute方法] 中提取这些参数:
 	 * 		JobExecutionContext.getJobDetail().getJobDataMap().get("key")
 	 * @param cron 定义任务触发时机的corn规则
-	 * @return true:添加成功; false:添加失败
+	 * @return true:修改成功; false:修改失败
 	 */
 	public boolean modify(String taskName, Job job, 
 			Map<?, ?> params, Cron cron) {
@@ -470,7 +470,7 @@ public class TaskScheduler {
 	 * 		[接口Job/JobNonCurrent] 的实现类可在 [execute方法] 中提取这些参数:
 	 * 		JobExecutionContext.getJobDetail().getJobDataMap().get("key")
 	 * @param intervalMillis 任务执行间隔(单位: ms)
-	 * @return true:添加成功; false:添加失败
+	 * @return true:修改成功; false:修改失败
 	 */
 	public boolean modify(String taskName, Job job, Map<?, ?> params, 
 			long intervalMillis) {
@@ -487,7 +487,7 @@ public class TaskScheduler {
 	 * @param intervalMillis 任务执行间隔(单位: ms)
 	 * @param startAt 任务启动时间点(若为null表示立即执行)
 	 * @param endAt 任务结束时间点(若为null表示无限期执行)
-	 * @return true:添加成功; false:添加失败
+	 * @return true:修改成功; false:修改失败
 	 */
 	public boolean modify(String taskName, Job job, Map<?, ?> params, 
 			long intervalMillis, Date startAt, Date endAt) {
