@@ -1452,6 +1452,16 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 	 * @return 临时文件路径
 	 */
 	public static String createTmpFile(String fileName) {
+		return createTmpFile(fileName, true);
+	}
+	
+	/**
+	 * 创建一个临时文件
+	 * @param fileName 临时文件名称
+	 * @param deleteOnExit 进程结束后自动删除
+	 * @return 临时文件路径
+	 */
+	public static String createTmpFile(String fileName, boolean deleteOnExit) {
 		if(StrUtils.isTrimEmpty(fileName)) {
 			fileName = IDUtils.getUUID();
 		}
@@ -1459,7 +1469,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 		String tmpPath = PathUtils.combine(PathUtils.getSysTmpDir(), fileName);
 		if(!FileUtils.exists(tmpPath)) {
 			File tmpFile = FileUtils.createFile(tmpPath);
-			if(tmpFile != null) {
+			if(deleteOnExit && tmpFile != null) {
 				tmpFile.deleteOnExit(); // 程序终止时删除该临时文件
 			}
 		}

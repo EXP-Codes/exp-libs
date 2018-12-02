@@ -1,5 +1,7 @@
 package exp.libs.utils.time;
 
+import java.net.URL;
+import java.net.URLConnection;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -57,6 +59,9 @@ public class TimeUtils {
 	
 	/** "秒"换算为millis单位 */
 	public final static long SECOND_UNIT = 1000L;
+	
+	/** 用于获取网络时间的默认站点（在国内百度最稳当） */
+	private final static String DEFAULT_SITE = "http://www.baidu.com";
 	
 	/** 私有化构造函数 */
 	protected TimeUtils() {}
@@ -168,6 +173,84 @@ public class TimeUtils {
 	public static String getSysDate(String format) {
 		SimpleDateFormat sdf = createSDF(format);
 		return sdf.format(new Date(System.currentTimeMillis()));
+	}
+	
+	/**
+	 * 获取当前系统的毫秒时间(相对于1970-01-01 00:00:00.000经过的毫秒数)
+	 * @return 毫秒时间
+	 */
+	public static long getSysMillis() {
+		return System.currentTimeMillis();
+	}
+	
+	/**
+	 * 获取指定格式的当前网络时间（一般用于校准本地时间，避免本地时间被篡改）
+	 * @param format 指定日期格式
+	 * @return 当前系统时间
+	 */
+	public static String getNetDate() {
+		return getNetDate(FORMAT_YMDHMSS);
+	}
+	
+	/**
+	 * 获取指定格式的当前网络时间（一般用于校准本地时间，避免本地时间被篡改）
+	 * @param format 指定日期格式
+	 * @return 当前系统时间
+	 */
+	public static String getNetDate(String format) {
+		return getNetDate(DEFAULT_SITE, format);
+	}
+	
+	/**
+	 * 获取指定格式的当前网络时间（一般用于校准本地时间，避免本地时间被篡改）
+	 * @param siteURL 用于查询时间的目标网站地址， 建议使用 http://www.baidu.com 更稳定
+	 * @param format 指定日期格式
+	 * @return 当前系统时间
+	 */
+	public static String getNetDate(String siteURL, String format) {
+		SimpleDateFormat sdf = createSDF(format);
+		String netDate = DEFAULT_TIME;
+		long netMillis = getNetMillis(siteURL);
+		if(netMillis > 0) {
+			netDate = sdf.format(new Date(netMillis));
+		}
+		return netDate;
+	}
+	
+	/**
+	 * 获取当前网络毫秒时间（默认通过http://www.baidu.com网站获取）
+	 * @return 毫秒时间
+	 */
+	public static long getNetMillis() {
+		return getNetMillis(DEFAULT_SITE);
+	}
+	
+	/**
+	 * 获取当前网络毫秒时间
+	 * @param siteURL 用于查询时间的目标网站地址， 建议使用 http://www.baidu.com 更稳定
+	 * @return 毫秒时间
+	 */
+	public static long getNetMillis(String siteURL) {
+		long netMillis = 0;
+		try {
+			URL url = new URL(siteURL);
+			URLConnection uc = url.openConnection();
+	        uc.connect();
+	        netMillis = uc.getDate();	// 读取网站时间
+		} catch (Exception e) {}
+		return netMillis;
+	}
+	
+	/**
+	 * 是否本地时间和网络时间是否已校准
+	 * @param diffMills 偏差值（ms）
+	 * @return true:已校准（在误差范围内）; false:未校准（在误差范围外）
+	 */
+	public static boolean isCalibrated(long diffMills) {
+		diffMills = (diffMills < 0 ? 0 : diffMills);
+		long sysMillis = getSysMillis();
+		long netMillis = getNetMillis();
+		return Math.abs(sysMillis - netMillis) <= diffMills;
 	}
 	
 	/**
