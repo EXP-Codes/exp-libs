@@ -553,7 +553,7 @@ public class SwingUtils {
 	 */
 	public static void info(String msg) {
 		JOptionPane.showMessageDialog(
-			    null, msg, "Info", JOptionPane.INFORMATION_MESSAGE);
+			    null, msg, "INFO", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	/**
@@ -570,7 +570,7 @@ public class SwingUtils {
 	 */
 	public static void warn(String msg) {
 		JOptionPane.showMessageDialog(
-			    null, msg, "Warn", JOptionPane.WARNING_MESSAGE);
+			    null, msg, "WARN", JOptionPane.WARNING_MESSAGE);
 	}
 	
 	/**
@@ -605,7 +605,7 @@ public class SwingUtils {
 	 */
 	public static void error(Throwable e, Object msg) {
 		JOptionPane.showMessageDialog(
-			    null, msg, "Error", JOptionPane.ERROR_MESSAGE);
+			    null, msg, "ERROR", JOptionPane.ERROR_MESSAGE);
 		if(e != null) {
 			e.printStackTrace();
 		}
@@ -627,7 +627,7 @@ public class SwingUtils {
 	 */
 	public static boolean confirm(String msg) {
 		return (0 == JOptionPane.showConfirmDialog(
-			    null, msg, "Tips", JOptionPane.ERROR_MESSAGE));
+			    null, msg, "TIPS", JOptionPane.ERROR_MESSAGE));
 	}
 	
 	/**
@@ -652,7 +652,7 @@ public class SwingUtils {
 	 */
 	public static String input(String msg) {
 		String input = JOptionPane.showInputDialog(
-			    null, msg, "Tips", JOptionPane.OK_CANCEL_OPTION);
+			    null, msg, "TIPS", JOptionPane.OK_CANCEL_OPTION);
 		return (input == null ? "" : input);
 	}
 	
@@ -664,7 +664,7 @@ public class SwingUtils {
 	 */
 	public static String input(String msg, Icon image) {
 		Object input = JOptionPane.showInputDialog(
-			    null, msg, "Tips", JOptionPane.OK_CANCEL_OPTION, image, null, null);
+			    null, msg, "TIPS", JOptionPane.OK_CANCEL_OPTION, image, null, null);
 		return (input == null ? "" : input.toString());
 	}
 	
