@@ -603,7 +603,7 @@ public class SwingUtils {
 	 * @param e 异常
 	 * @param msg 异常消息
 	 */
-	public static void error(Throwable e, Object msg) {
+	public static void error(Throwable e, String msg) {
 		JOptionPane.showMessageDialog(
 			    null, msg, "ERROR", JOptionPane.ERROR_MESSAGE);
 		if(e != null) {
