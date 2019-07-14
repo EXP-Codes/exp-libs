@@ -31,7 +31,7 @@ public class _Double extends BaseFunction1 {
 	
 	/**
 	 * 强制类型转换: String -> Double
-	 * @param String:数字字符串
+	 * @param param String:数字字符串
 	 * @return Double:浮点数
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */

@@ -95,7 +95,7 @@ public class _Month extends __TimeUnit {
 	 * 设置为 [from-to] 月份内触发
 	 * @param from 开始月份(包括)
 	 * @param to 结束月份(包括)
-	 * @return
+	 * @return 月份时间字段的表达式
 	 */
 	public String withRange(String from, String to) {
 		Integer _from = MONTHS.get(from);

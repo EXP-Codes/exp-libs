@@ -254,7 +254,7 @@ public final class SocketByteBuffer {
 	
 	/**
 	 * 获取字节缓冲器所存储的字节使用的编码
-	 * @return
+	 * @return 字节缓冲器使用的编码
 	 */
 	public String getCharset() {
 		return charset;
@@ -262,7 +262,7 @@ public final class SocketByteBuffer {
 
 	/**
 	 * 获取字节缓冲器当前已存储的字节数
-	 * @return
+	 * @return 字节缓冲器已存储的字节数
 	 */
 	public int length() {
 		return length;
@@ -270,7 +270,7 @@ public final class SocketByteBuffer {
 
 	/**
 	 * 获取字节缓冲器容量
-	 * @return
+	 * @return 字节缓冲器容量
 	 */
 	public int getCapacity() {
 		return capacity;

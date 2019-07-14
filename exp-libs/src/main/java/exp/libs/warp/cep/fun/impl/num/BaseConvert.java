@@ -46,7 +46,7 @@ public class BaseConvert extends BaseFunctionN {
 	/**
 	 * 进制互转:10进制正整数 <-> 任意进制数(>=2, <=36)
 	 * 
-	 * @params 共2个参数,但根据类型有2种应用：
+	 * @params params 共2个参数,但根据类型有2种应用：
 	 * 		param[1] long:10进制正整数(>=0, 不在此范围则置值为0)
 	 * 		param[2] int:转换进制基数(>=2, <=36, 不在此范围则置值为10)
 	 * 		return String: n进制数

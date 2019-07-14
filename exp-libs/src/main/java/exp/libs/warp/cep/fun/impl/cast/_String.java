@@ -30,7 +30,7 @@ public class _String extends BaseFunction1 {
 	
 	/**
 	 * 强制类型转换: 强制把任何对象转换为String
-	 * @param Object:各种类型值
+	 * @param param Object:各种类型值
 	 * @return String:字符串
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */

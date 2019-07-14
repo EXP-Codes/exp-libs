@@ -283,7 +283,6 @@ public class HttpClientUtils extends HttpUtils {
 	 * @param header 请求头参数表
 	 * @param request 请求参数表
 	 * @return 是否下载成功（下载成功会保存到savePath）
-	 * @return
 	 */
 	public static boolean downloadByPost(String savePath, String url, 
 			Map<String, String> header, Map<String, String> request) {

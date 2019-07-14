@@ -41,8 +41,8 @@ abstract class _BaseTable extends _TableRenderer {
 	
 	/**
 	 * 构造表头
-	 * @param headers
-	 * @return
+	 * @param headers 表头值
+	 * @return 表头容器
 	 */
 	private static Vector<String> toVector(List<String> headers) {
 		Vector<String> vector = new Vector<String>();
@@ -60,7 +60,7 @@ abstract class _BaseTable extends _TableRenderer {
 
 	/**
 	 * 构造一个固定大小的初始表单容器
-	 * @return
+	 * @return 初始表单容器
 	 */
 	private static Vector<Vector<String>> createDataContainer(
 			List<String> headers, int maxViewRow) {
@@ -79,8 +79,8 @@ abstract class _BaseTable extends _TableRenderer {
 	
 	/**
 	 * 获取空行
-	 * @param col
-	 * @return
+	 * @param col 空行的列数
+	 * @return 空行容器
 	 */
 	private static Vector<String> getEmptyRow(int col) {
 		String[] array = new String[col];
@@ -91,7 +91,7 @@ abstract class _BaseTable extends _TableRenderer {
 	
 	/**
 	 * 刷新表单数据
-	 * @param newDatas 新数据
+	 * @param datas 新表单数据
 	 */
 	protected void _reflash(Vector<Vector<String>> datas) {
 		if(datas != null) {

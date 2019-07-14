@@ -31,7 +31,7 @@ public class Bin extends BaseFunction1 {
 	
 	/**
 	 * 进制转换： 10 -> 2
-	 * @param Integer/String:10进制数值(字符串)
+	 * @param param Integer/String:10进制数值(字符串)
 	 * @return String: 2进制数值字符串
 	 * @throws EvaluationException 若解析失败则抛出异常
 	 */

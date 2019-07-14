@@ -30,8 +30,7 @@ public class Wait extends BaseFunction1 {
 	
 	/**
 	 * 使执行线程休眠 X ms.
-	 * 共1个入参：
-	 * @param1 Long:休眠时长,单位ms
+	 * @param Long:休眠时长,单位ms
 	 * @return Boolean: true:休眠成功; false:休眠失败
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */

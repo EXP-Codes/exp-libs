@@ -54,15 +54,15 @@ public interface HttpMethod
 
     /**
      * 追加方法: 用于修正 commons-httpclient 自动重定向页面后导致响应cookies丢失问题
-     * @param name
-     * @param value
+     * @param name cookie键
+     * @param value cookie值
      * @author EXP
      */
     public abstract void addResponseHeader(String name, String value);
 
     /**
      * 追加方法: 用于修正 commons-httpclient 自动重定向页面后导致响应cookies丢失问题
-     * @param header
+     * @param header 响应头
      * @author EXP
      */
     public abstract void addResponseHeader(Header header);
