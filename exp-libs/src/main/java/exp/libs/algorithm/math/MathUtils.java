@@ -85,7 +85,7 @@ public class MathUtils {
 	 * }
 	 * 
 	 * </pre>
-	 * @param num 浮点数
+	 * @param n 浮点数
 	 * @return 1 / sqrt(num)
 	 */
 	public static float toRsqrt(float n) {

@@ -568,8 +568,7 @@ public class Consumer {
 	 * @param message 响应的消息，该消息的<code>JMSReplyTo</code>必须和接收到的消息一致
 	 * @see AbstractProducerCallBack#onMessageConsumed(Message)
 	 * @see Message#setJMSReplyTo(String)
-	 * @throws JMSException
-	 *             响应消息失败
+	 * @throws JMSException 响应消息失败
 	 */
 	public void response(Message message) throws JMSException {
 		if (replyProducer == null) {
