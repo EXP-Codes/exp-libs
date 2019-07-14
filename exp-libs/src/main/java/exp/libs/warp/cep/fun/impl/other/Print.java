@@ -35,7 +35,7 @@ public class Print extends BaseFunctionN {
 	
 	/**
 	 * 打印消息到 标准流、异常流、或文件.
-	 * @param 共2个入参：
+	 * @param params 共2个入参：
 	 * 		param[1] String:需要打印的消息
 	 * 		param2 String:输出位置:
 	 * 			"out":标准流
