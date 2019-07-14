@@ -294,9 +294,10 @@ public class RandomUtils {
 	
 	/**
 	 * 随机获取集合中的某个元素
-	 * @param list 队列（建议使用ArrayList）
+	 * @param array 队列（建议使用ArrayList）
 	 * @return 队列中的元素, 若队列为空, 则返回null
 	 */
+	@SuppressWarnings("unchecked")
 	public static <E> E genElement(E... array) {
 		E e = null;
 		if(ListUtils.isNotEmpty(array)) {

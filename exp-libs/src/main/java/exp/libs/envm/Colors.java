@@ -113,7 +113,7 @@ public class Colors {
 	
 	/**
 	 * 获取随机颜色
-	 * @return
+	 * @return 随机颜色对象
 	 */
 	public static Colors RANDOM() {
 		return RandomUtils.genElement(COLORS);

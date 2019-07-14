@@ -277,7 +277,7 @@ public abstract class LoopThread extends Thread {
 	
 	/**
 	 * 获取线程名称
-	 * @return
+	 * @return 线程名称
 	 */
 	protected String NAME() {
 		return getName();

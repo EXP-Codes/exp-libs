@@ -120,8 +120,8 @@ public class CryptoUtils {
 	
 	/**
 	 * 拼接多个字符串生成32位MD5
-	 * @param strlist 待加密的字符串列表
-	 * @param datalist 字符串编码
+	 * @param datalist 待加密的字符串列表
+	 * @param charset 字符串编码
 	 * @return 32位MD5
 	 */
 	public static String toMD5(String[] datalist, String charset) {

@@ -41,10 +41,10 @@ public class SprintfINT extends BaseFunctionN {
 	
 	/**
 	 * printf 风格的格式字符串
-	 * 共2个参数：
-	 * @param1 String:sprintf 表达式 C语言符号 %02d
-	 * @param2 Integer:仅支持数值入参
-	 * @return String
+	 * @param 共2个参数：
+	 * 		param[1] String:sprintf 表达式 C语言符号 %02d
+	 * 		param[2] Integer:仅支持数值入参
+	 * @return String:printf 风格的格式字符串
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */
 	@Override

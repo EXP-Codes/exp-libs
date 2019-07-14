@@ -143,7 +143,7 @@ public class StrUtils {
 	
 	/**
 	 * 判断trim(字符串)是否非空
-	 * @param s 待判断字符串
+	 * @param str 待判断字符串
 	 * @return true:trim(字符串)非空; false:trim(字符串)为null或""
 	 */
 	public static boolean isNotTrimEmpty(String str) {
@@ -172,7 +172,7 @@ public class StrUtils {
 	
 	/**
 	 * 判断字符串是否全为空白字符
-	 * @param s 待判断字符串
+	 * @param str 待判断字符串
 	 * @return 是否全空白字符串
 	 */
 	public static boolean isBlank(String str) {
@@ -184,7 +184,7 @@ public class StrUtils {
 	
 	/**
 	 * 判断字符串是否非null
-	 * @param s 待判断字符串
+	 * @param str 待判断字符串
 	 * @return true:字符串非null; false:字符串为null
 	 */
 	public static String toNotNull(String str) {
