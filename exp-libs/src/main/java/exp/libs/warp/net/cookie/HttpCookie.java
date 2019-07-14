@@ -56,7 +56,7 @@ public abstract class HttpCookie {
 	
 	/**
 	 * 初始化.
-	 *  此方法在{@link #takeCookieNVE()}之前执行
+	 *  此方法在{@link #takeCookieNVE}之前执行
 	 */
 	protected abstract void init();
 	
@@ -135,7 +135,7 @@ public abstract class HttpCookie {
 	
 	/**
 	 * 获取cookie数量
-	 * @return
+	 * @return cookie数量
 	 */
 	public int size() {
 		return cookies.size();

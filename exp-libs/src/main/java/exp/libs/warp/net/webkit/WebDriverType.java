@@ -45,24 +45,24 @@ public class WebDriverType {
 	}
 	
 	/**
-	 * WEB驱动包目录 (可重载)
-	 * @return
+	 * 获取WEB驱动包目录 (可重载)
+	 * @return WEB驱动包目录
 	 */
 	protected String DRIVER_DIR() {
 		return DRIVER_DIR;
 	}
 	
 	/**
-	 * 驱动名
-	 * @return
+	 * 获取驱动名
+	 * @return 驱动名
 	 */
 	public String DRIVER_NAME() {
 		return driverName;
 	}
 	
 	/**
-	 * 驱动路径
-	 * @return
+	 * 获取驱动路径
+	 * @return 驱动路径
 	 */
 	public String DRIVER_PATH() {
 		return driverPath;

@@ -249,7 +249,7 @@ interface _IJedis {
 	/**
 	 * <pre>
 	 * 取出一个  Map&lt;String, Serializable&gt;哈希表（其值为反序列化对象）.
-	 * 配套{@link #addSerialMap}或{@link #addSerialValToMap}使用.
+	 * 配套{@link #addSerialMap}或{@link #addSerialObjToMap}使用.
 	 * </pre>
 	 * @param redisKey 所操作对象在redis中的键
 	 * @return Map&lt;String, Object&gt;哈希表（若不存在则返回空表，不会返回null）
@@ -259,7 +259,7 @@ interface _IJedis {
 	/**
 	 * <pre>
 	 * 获取某个Map&lt;String, Serializable&gt;哈希表中的某个键的值对象（反序列化对象）
-	 * 配套{@link #addSerialMap}或{@link #addSerialValToMap}使用.
+	 * 配套{@link #addSerialMap}或{@link #addSerialObjToMap}使用.
 	 * </pre>
 	 * @param redisKey 所操作对象在redis中的键
 	 * @param keys 哈希表中的某个键
@@ -270,7 +270,7 @@ interface _IJedis {
 	/**
 	 * <pre>
 	 * 获取某个Map&lt;String, Serializable&gt;哈希表中的若干个键的值对象（反序列化对象）
-	 * 配套{@link #addSerialMap}或{@link #addSerialValToMap}使用.
+	 * 配套{@link #addSerialMap}或{@link #addSerialObjToMap}使用.
 	 * </pre>
 	 * @param redisKey 哈希表的键
 	 * @param keys 哈希表中的一些键
@@ -281,7 +281,7 @@ interface _IJedis {
 	/**
 	 * <pre>
 	 * 获取某个Map&lt;String, Serializable&gt;哈希表中的所有值.
-	 * 配套{@link #addSerialMap}或{@link #addSerialValToMap}使用.
+	 * 配套{@link #addSerialMap}或{@link #addSerialObjToMap}使用.
 	 * </pre>
 	 * @param redisKey 所操作对象在redis中的键
 	 * @return 若不存在该哈希表或哈希表为空，则返回空列表（不会返回null）

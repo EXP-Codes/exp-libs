@@ -69,8 +69,8 @@ public class DBUtils {
 	 * 
 	 *   这是因为proxool总是最先向JVM请求销毁自身, 导致在进程销毁钩子无法使用线程池, 只能使用常规的JDBC操作.
 	 *   
-	 *   通过此方法, 在程序使用线程池之前设置 {@link #setAutoShutdownPool() false} 可以避免这种主动销毁的行为
-	 *   但是在进程钩子的最后, 需要手动调用 {@link #shutdownPool()} 方法关闭线程池
+	 *   通过此方法, 在程序使用线程池之前设置 {@link #setAutoShutdownPool false} 可以避免这种主动销毁的行为
+	 *   但是在进程钩子的最后, 需要手动调用 {@link #shutdownPool} 方法关闭线程池
 	 * </PRE>
 	 * @param auto true:自动关闭线程池(默认); false:手动关闭线程池
 	 */

@@ -151,8 +151,8 @@ public class ObjUtils {
 	
 	/**
 	 * 检查cClazz是否为fClazz的子类
-	 * @param cClazz (期望的)子类
-	 * @param fClazz (期望的)父类
+	 * @param cClass (期望的)子类
+	 * @param fClass (期望的)父类
 	 * @return true:是; false:否
 	 */
 	public static boolean isSubclass(Class<?> cClass, Class<?> fClass) {
@@ -428,7 +428,7 @@ public class ObjUtils {
 	/**
 	 * 把内存对象序列化并保存到外存文件
 	 * @param o 内存对象（需实现Serializable接口）
-	 * @param outFilePath 外存文件位置
+	 * @param outFilePath 外存序列化文件位置
 	 * @return true:序列化成功; false:序列化失败
 	 */
 	public static boolean toSerializable(Serializable o, String outFilePath) {
@@ -453,7 +453,7 @@ public class ObjUtils {
 	
 	/**
 	 * 反序列化外存文件，还原为内存对象
-	 * @param inFile 外存序列化文件
+	 * @param inFilePath 外存序列化文件位置
 	 * @return 内存对象(失败返回null)
 	 */
 	public static Object unSerializable(String inFilePath) {

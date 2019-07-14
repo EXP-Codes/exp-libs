@@ -68,7 +68,7 @@ public class NioSocketClient extends Thread {
 
 	/**
 	 * 构造函数
-	 * @param socketBean 客户端配置
+	 * @param sockConf 客户端配置
 	 * @param handler 业务处理器
 	 */
 	public NioSocketClient(SocketBean sockConf, IHandler handler) {

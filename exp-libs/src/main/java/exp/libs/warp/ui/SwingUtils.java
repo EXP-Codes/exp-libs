@@ -489,6 +489,7 @@ public class SwingUtils {
 	 * @param items 下拉列表
 	 * @return 下拉组件
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static JComboBox getComboBox(String defavlt, String... items) {
 		JComboBox comboBox = new JComboBox();
 		comboBox.addItem(defavlt);
@@ -505,6 +506,7 @@ public class SwingUtils {
 	 * @param items 下拉列表
 	 * @return 下拉组件
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static JComboBox getComboBox(String[] items) {
 		JComboBox comboBox = new JComboBox();
 		if(items != null) {
@@ -584,7 +586,6 @@ public class SwingUtils {
 	/**
 	 * 异常弹窗
 	 * @param msg 异常消息
-	 * @param e 异常
 	 */
 	public static void error(String msg) {
 		error(null, msg);
@@ -623,7 +624,7 @@ public class SwingUtils {
 	/**
 	 * 确认弹窗
 	 * @param msg 确认消息
-	 * @param true:是; false:否
+	 * @return true:是; false:否
 	 */
 	public static boolean confirm(String msg) {
 		return (0 == JOptionPane.showConfirmDialog(
@@ -659,7 +660,7 @@ public class SwingUtils {
 	/**
 	 * 输入弹窗(含图片)
 	 * @param msg 提示消息
-	 * @param icon 提示图片
+	 * @param image 提示图片
 	 * @return 输入内容
 	 */
 	public static String input(String msg, Icon image) {

@@ -30,9 +30,8 @@ public class MTrim extends BaseFunction1 {
 	
 	/**
 	 * 去除字符串头尾空字符.
-	 * 共1个入参：
-	 * @param1 String:原字符串
-	 * @return String
+	 * @param String:原字符串
+	 * @return String:处理后的字符串
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */
 	@Override

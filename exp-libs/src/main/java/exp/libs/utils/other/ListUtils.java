@@ -296,9 +296,8 @@ public class ListUtils {
 	
 	/**
 	 * 比较两个队列是否完全一致(顺序有关)
-	 * @param <T>
-	 * @param c1 集合1
-	 * @param c2 集合2
+	 * @param list1 集合1
+	 * @param list2 集合2
 	 * @return true:一致; false:存异
 	 */
 	public static <E extends Comparable<E>> boolean compare(
@@ -404,7 +403,7 @@ public class ListUtils {
 	 * @param array 数组
 	 * @return 队列
 	 */
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static <E> List asList(E... array) {
 		if(array == null || array.length <= 0) {
 			return new LinkedList<Object>();

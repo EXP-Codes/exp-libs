@@ -91,8 +91,8 @@ public class Cron {
 	
 	/**
 	 * 设置cron表达式
-	 * @param expression
-	 * @return
+	 * @param expression cron表达式字符串
+	 * @return cron表达式对象
 	 */
 	public Cron setExpression(String expression) {
 		if(expression != null && CronExpression.isValidExpression(expression)) {

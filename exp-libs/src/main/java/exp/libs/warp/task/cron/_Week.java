@@ -83,7 +83,7 @@ public class _Week extends __TimeUnit {
 
 	/**
 	 * 设置为"无意义"值, 使得该值对最终的cron规则无约束影响
-	 * @return
+	 * @return 星期时间字段的表达式
 	 */
 	public String withNone() {
 		return setSubExpression(NONE);
@@ -91,7 +91,7 @@ public class _Week extends __TimeUnit {
 	
 	/**
 	 * 设置值为周六（星期的最后一天）
-	 * @return
+	 * @return 星期时间字段的表达式
 	 */
 	public String withLastDay() {
 		return setSubExpression(L);
@@ -99,8 +99,8 @@ public class _Week extends __TimeUnit {
 	
 	/**
 	 * 设置为: 日历中周week后的第一天
-	 * @param week
-	 * @return
+	 * @param week 星期值
+	 * @return 星期时间字段的表达式
 	 */
 	public String withAfterWeek(int week) {
 		return !_checkRange(week) ? getSubExpression() : 
@@ -109,8 +109,8 @@ public class _Week extends __TimeUnit {
 	
 	/**
 	 * 设置为: 日历中周week后的第一天
-	 * @param week
-	 * @return
+	 * @param week 星期值
+	 * @return 星期时间字段的表达式
 	 */
 	public String withAfterWeek(String week) {
 		Integer _week = WEEKS.get(week);
@@ -122,7 +122,7 @@ public class _Week extends __TimeUnit {
 	 * 设置为 [from-to] 星期内触发
 	 * @param from 开始星期(包括)
 	 * @param to 结束星期(包括)
-	 * @return
+	 * @return 星期时间字段的表达式
 	 */
 	public String withRange(String from, String to) {
 		Integer _from = WEEKS.get(from);
@@ -134,7 +134,7 @@ public class _Week extends __TimeUnit {
 	/**
 	 * 设置为若干个星期触发
 	 * @param WEEKS 星期列表
-	 * @return
+	 * @return 星期时间字段的表达式
 	 */
 	public String withSequence(String... WEEKS) {
 		if(ListUtils.isNotEmpty(WEEKS)) {
@@ -156,7 +156,7 @@ public class _Week extends __TimeUnit {
 	 * 设置为从 from 星期开始, 每间隔 interval 个星期触发
 	 * @param from 起始星期
 	 * @param interval 间隔星期数
-	 * @return
+	 * @return 星期时间字段的表达式
 	 */
 	public String withStep(String from, int interval) {
 		Integer _from = WEEKS.get(from);
@@ -166,9 +166,9 @@ public class _Week extends __TimeUnit {
 	
 	/**
 	 * 设置为某月 第index个星期week
-	 * @param week 星期
+	 * @param week 星期值
 	 * @param index 第index个
-	 * @return
+	 * @return 星期时间字段的表达式
 	 */
 	public String withOrder(int week, int index) {
 		return !(inRange(week) && index > 0) ? getSubExpression() : 
@@ -177,9 +177,9 @@ public class _Week extends __TimeUnit {
 	
 	/**
 	 * 设置为某月 第index个星期week
-	 * @param week 星期
+	 * @param week 星期值
 	 * @param index 第index个
-	 * @return
+	 * @return 星期时间字段的表达式
 	 */
 	public String withOrder(String week, int index) {
 		Integer _week = WEEKS.get(week);
@@ -189,8 +189,8 @@ public class _Week extends __TimeUnit {
 	
 	/**
 	 * 检查[星期]值是否在合法范围内
-	 * @param week
-	 * @return
+	 * @param week 星期值
+	 * @return true:范围内; false:范围外
 	 */
 	private boolean inRange(int week) {
 		return (MIN <= week && week <= MAX);
@@ -198,8 +198,8 @@ public class _Week extends __TimeUnit {
 	
 	/**
 	 * 检查[星期]值是否在合法范围内
-	 * @param week
-	 * @return
+	 * @param week 星期值
+	 * @return true:范围内; false:范围外
 	 */
 	private boolean inRange(String week) {
 		return WEEKS.containsKey(week);

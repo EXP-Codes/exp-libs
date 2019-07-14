@@ -408,7 +408,7 @@ public class NumUtils {
 	 *  压缩为 [1-3, 5-6, 8, 10]
 	 * </PRE>
 	 * @param ascSeries 递增序列(无需连续, 但必须递增)
-	 * @return
+	 * @return 压缩后的递增队列
 	 */
 	public static List<String> compress(int[] ascSeries) {
 		return compress(ascSeries, '-');

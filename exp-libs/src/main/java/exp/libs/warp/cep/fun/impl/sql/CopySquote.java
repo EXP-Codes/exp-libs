@@ -30,10 +30,9 @@ public class CopySquote extends BaseFunction1 {
 	public final static String NAME = "copySquote";
 	
 	/**
-	 * 单引号复制,把1个单引号替换成2个连续的单引号.
-	 * 共1个入参：
-	 * @param1 String:原字符串
-	 * @return String
+	 * 单引号复制: 把1个单引号替换成2个连续的单引号.
+	 * @param param 原字符串
+	 * @return String 转换后的字符串
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */
 	@Override

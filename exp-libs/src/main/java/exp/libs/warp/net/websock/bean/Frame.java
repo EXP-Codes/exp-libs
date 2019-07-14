@@ -57,7 +57,7 @@ public class Frame implements Framedata {
 	
 	/**
 	 * 构造函数
-	 * @param byteHex 字节数据
+	 * @param bytes 字节数据
 	 * @param opcode 操作码
 	 */
 	public Frame(byte[] bytes, Opcode opcode) {

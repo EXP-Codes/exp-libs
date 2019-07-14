@@ -16,7 +16,7 @@ public interface IHandler {
 	/**
 	 * <PRE>
 	 * 会话登陆逻辑.
-	 * 	只有登陆成功的会话才会触发{@link #_handle()}方法调用
+	 * 	只有登陆成功的会话才会触发{@link #_handle}方法调用
 	 * </PRE>
 	 * @param session 客户端代理会话
 	 * @return true:登陆成功; false:登陆失败

@@ -30,10 +30,9 @@ public class CopyDquote extends BaseFunction1 {
 	public final static String NAME = "copyDquote";
 	
 	/**
-	 * 双引号复制,把1个双引号替换成2个连续的双引号.
-	 * 共1个入参：
-	 * @param1 String:原字符串
-	 * @return String
+	 * 双引号复制: 把1个双引号替换成2个连续的双引号.
+	 * @param param 原字符串
+	 * @return String 转换后的字符串
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */
 	@Override
