@@ -190,7 +190,6 @@ public class Graph {
 	
 	/**
 	 * 在获取邻接矩阵后， 若拓扑图被修改过，则需要调用此方法重新生成邻接矩阵
-	 * @return
 	 */
 	public void resetAdjacencyMatrix() {
 		toAdjacencyMatrix();
@@ -198,7 +197,7 @@ public class Graph {
 	
 	/**
 	 * 获取邻接矩阵
-	 * @return
+	 * @return 邻接矩阵
 	 */
 	public int[][] getAdjacencyMatrix() {
 		if(matrix == null) {

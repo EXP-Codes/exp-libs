@@ -22,19 +22,19 @@ public interface ISession {
 	
 	/**
 	 * 切换调试模式
-	 * @param debug
+	 * @param debug 调试模式
 	 */
 	public void debug(boolean debug);
 	
 	/**
 	 * 检查WebSocket连接是否连接中
-	 * @return
+	 * @return true:连接存活; fase:连接已断开
 	 */
 	public boolean isConnecting();
 	
 	/**
 	 * 向服务器发送数据帧
-	 * @param frame
+	 * @param frame 数据帧
 	 */
 	public void send(Frame frame);
 	

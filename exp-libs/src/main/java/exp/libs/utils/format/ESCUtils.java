@@ -82,7 +82,7 @@ public class ESCUtils {
 	 * [&amp;reg;] 反转义 [®] 意为 [注册符].
 	 * </PRE>
 	 * 
-	 * @param 含有xml转义字符的字符串
+	 * @param xmlStr 含有xml转义字符的字符串
 	 * @return 普通字符串
 	 */
 	public static String unXmlESC(final String xmlStr) {
@@ -121,7 +121,7 @@ public class ESCUtils {
 	 * （若含有 &amp;#21378; 这里unicode编码也会被还原成原本字符）
 	 * </PRE>
 	 * 
-	 * @param 含有html转义字符的字符串
+	 * @param htmlStr 含有html转义字符的字符串
 	 * @return 普通字符串
 	 */
 	public static String unHtmlESC(final String htmlStr) {
@@ -222,7 +222,7 @@ public class ESCUtils {
 	 *  删除: \r \n \b \t \f
 	 * </PRE>
 	 * 
-	 * @param jsonKV java字符
+	 * @param json java字符
 	 * @return json转义字符
 	 */
 	public static String toJsonESC(final String json) {

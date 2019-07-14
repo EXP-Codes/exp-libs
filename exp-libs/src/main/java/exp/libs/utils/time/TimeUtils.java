@@ -185,7 +185,6 @@ public class TimeUtils {
 	
 	/**
 	 * 获取指定格式的当前网络时间（一般用于校准本地时间，避免本地时间被篡改）
-	 * @param format 指定日期格式
 	 * @return 当前系统时间
 	 */
 	public static String getNetDate() {
@@ -299,8 +298,8 @@ public class TimeUtils {
 	}
 	
 	/**
-	 * 把[yyyy-MM-dd HH:mm:ss格式字符串]转换为[毫秒时间]
-	 * @param ymdhms yyyy-MM-dd HH:mm:ss格式字符串
+	 * 把[Date时间]转换为[毫秒时间]
+	 * @param date Date时间
 	 * @return 毫秒时间
 	 */
 	public static long toMillis(Date date) {
@@ -322,8 +321,8 @@ public class TimeUtils {
 	 * @param format 时间字符串格式
 	 * @return 毫秒时间
 	 */
-	public static long toMillis(String sData, String format) {
-		return toMillis(toDate(sData, format));
+	public static long toMillis(String sDate, String format) {
+		return toMillis(toDate(sDate, format));
 	}
 	
 	/**

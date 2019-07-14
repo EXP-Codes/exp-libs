@@ -40,7 +40,7 @@ public class Replace extends BaseFunctionN {
 	
 	/**
 	 * 字符串正则替换.
-	 * @param 共3个参数：
+	 * @param params 共3个参数：
 	 * 		param[1] String:原字符串
 	 * 		param[2] String:正则表达式
 	 * 		param[2] String:替代字符串
