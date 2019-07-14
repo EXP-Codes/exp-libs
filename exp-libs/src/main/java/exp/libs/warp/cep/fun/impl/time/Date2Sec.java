@@ -34,9 +34,8 @@ public class Date2Sec extends BaseFunction1 {
 	
 	/**
 	 * yyyy-MM-dd HH:mm:ss -> 纪元秒 转换.
-	 * 共1个入参：
-	 * @param1 String/Date: yyyy-MM-dd HH:mm:ss格式的日期
-	 * @return Long
+	 * @param param String/Date: yyyy-MM-dd HH:mm:ss格式的日期
+	 * @return Long: 纪元秒
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */
 	@Override

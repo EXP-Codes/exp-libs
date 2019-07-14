@@ -33,11 +33,7 @@ public class Macro extends BaseFunctionN {
 	
 	/**
 	 * 给定多个无直接关系的函数，连续执行.期间只要有一个执行失败则中断.
-	 * 不定个数入参：
-	 * @param1 String:完整的函数式/表达式
-	 * @param2 String:完整的函数式/表达式
-	 * @param... String:完整的函数式/表达式
-	 * @paramN String:完整的函数式/表达式
+	 * @param params 不定个数入参：完整的函数式/表达式
 	 * @return Boolean: true:全部执行成功; false:存在执行失败
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */

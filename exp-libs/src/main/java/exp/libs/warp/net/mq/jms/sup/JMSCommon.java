@@ -180,8 +180,7 @@ public class JMSCommon {
 	/**
 	 * 建立连接
 	 * 
-	 * @param isCreate
-	 *            true为创建
+	 * @param clinetId 客户端id
 	 * @throws Exception
 	 */
 	protected void createConnection(String clinetId) throws Exception {
@@ -348,8 +347,6 @@ public class JMSCommon {
 	/**
 	 * 创建会话
 	 * 
-	 * @param isCreate
-	 *            true为创建
 	 * @throws Exception
 	 */
 	protected void createSession() throws Exception {

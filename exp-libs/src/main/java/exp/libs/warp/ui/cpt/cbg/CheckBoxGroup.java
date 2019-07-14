@@ -252,7 +252,7 @@ public class CheckBoxGroup<T> {
 	}
 	
 	/**
-	 * 把复选框生成 [row=1, col=size] 的 Grid布局面板
+	 * 为复选框生成 [row=1, col=size] 的 Grid布局面板
 	 * @return [row=1, col=size] 的 Grid布局面板
 	 */
 	public JPanel toHGridPanel() {
@@ -266,7 +266,7 @@ public class CheckBoxGroup<T> {
 	}
 	
 	/**
-	 * 把复选框生成 [row=size, col=1] 的 Grid布局面板
+	 * 为复选框生成 [row=size, col=1] 的 Grid布局面板
 	 * @return [row=size, col=1] 的 Grid布局面板
 	 */
 	public JPanel toVGridPanel() {
@@ -280,8 +280,8 @@ public class CheckBoxGroup<T> {
 	}
 	
 	/**
-	 * 把复选框生成 [row=row, col=size/row] 的 Grid布局面板
-	 * @return
+	 * 为复选框生成 [row=row, col=size/row] 的 Grid布局面板
+	 * @return [row=row, col=size/row] 的 Grid布局面板
 	 */
 	public JPanel toGridPanel(int row) {
 		row = (row <= 0 ? 1 : row);

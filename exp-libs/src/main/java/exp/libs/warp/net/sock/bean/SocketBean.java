@@ -273,7 +273,7 @@ public class SocketBean {
 
 	/**
 	 * 设置读缓冲区大小（单位MB）
-	 * @param bufferSize 缓冲区大小
+	 * @param readBufferSize 读缓冲区大小
 	 */
 	public void setReadBufferSize(int readBufferSize) {
 		setReadBufferSize(readBufferSize, BUFF_SIZE_UNIT_MB);
@@ -281,7 +281,7 @@ public class SocketBean {
 	
 	/**
 	 * 设置读缓冲区大小: (bufferSize * unit) 字节
-	 * @param bufferSize 缓冲区大小
+	 * @param readBufferSize 读缓冲区大小
 	 * @param unit 单位:默认为 1024*1024个字节, 即1MB
 	 */
 	public void setReadBufferSize(int readBufferSize, int unit) {
@@ -301,7 +301,7 @@ public class SocketBean {
 
 	/**
 	 * 设置写缓冲区大小（单位MB）
-	 * @param bufferSize 缓冲区大小
+	 * @param writeBufferSize 写缓冲区大小
 	 */
 	public void setWriteBufferSize(int writeBufferSize) {
 		setWriteBufferSize(writeBufferSize, BUFF_SIZE_UNIT_MB);
@@ -309,7 +309,7 @@ public class SocketBean {
 	
 	/**
 	 * 设置写缓冲区大小: (bufferSize * unit) 字节
-	 * @param bufferSize 缓冲区大小
+	 * @param writeBufferSize 写缓冲区大小
 	 * @param unit 单位:默认为 1024*1024个字节, 即1MB
 	 */
 	public void setWriteBufferSize(int writeBufferSize, int unit) {

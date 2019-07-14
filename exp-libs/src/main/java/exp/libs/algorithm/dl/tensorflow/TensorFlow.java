@@ -41,7 +41,7 @@ public class TensorFlow {
 	/**
 	 * 获取输出矩阵（即输出张量）
 	 * @param fetchName
-	 * @return
+	 * @return 输出矩阵
 	 */
 	public float[] getOutput(final String fetchName) {
 		tfAPI.run(fetchName);			// 执行模型运算
@@ -52,7 +52,7 @@ public class TensorFlow {
 	 * 加载单通道2D图像，并降维到一维数组
 	 * 	(模拟python的PIL组件所读取的单通道图像数据格式, 其中黑色标记值为0， 白色标记值为1)
 	 * @param binaryImage 单通道图像
-	 * @return
+	 * @return 一维降维矩阵
 	 */
 	public float[] loadImage(BufferedImage binaryImage) {
 		float[] pixels = new float[0];
@@ -82,11 +82,11 @@ public class TensorFlow {
 	 *  当axis=0时，求每列的的最大值的索引
 	 *  当axis=1时，求每行的的最大值的索引
 	 * 
-	 * @param matrix
-	 * @param row
-	 * @param col
+	 * @param matrix 矩阵
+	 * @param row 矩阵行数
+	 * @param col 矩阵列数
 	 * @param axis 0或1
-	 * @return
+	 * @return 根据 axis 返回每行/列的最大值的索引
 	 */
 	public int[] argmax(float[] matrix, int row, int col, int axis) {
 		int[] idxs = new int[0];

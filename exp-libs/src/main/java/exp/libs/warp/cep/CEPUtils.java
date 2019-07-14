@@ -456,7 +456,7 @@ public final class CEPUtils {
 	/**
 	 * 反注册指定函数.
 	 * 此方法实用性不大，同名函数自动覆盖.
-	 * @param variableName 函数名称
+	 * @param funcationName 函数名称
 	 */
 	public static void unregisterFunction(String funcationName) {
 		jep.getFunctionTable().remove(funcationName);

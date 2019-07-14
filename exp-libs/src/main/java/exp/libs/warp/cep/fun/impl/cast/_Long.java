@@ -31,7 +31,7 @@ public class _Long extends BaseFunction1 {
 	
 	/**
 	 * 强制类型转换: String -> Long
-	 * @param String:数字字符串
+	 * @param param String:数字字符串
 	 * @return Long:长整型
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */

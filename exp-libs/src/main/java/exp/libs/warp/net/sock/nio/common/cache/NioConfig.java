@@ -43,7 +43,8 @@ public abstract class NioConfig extends SocketBean implements IConfig {
 	protected FilterChain filterChain;
 
 	/**
-	 * @param sb 从配置文件获取的配置实体
+	 * 构造函数
+	 * @param socketBean 从配置文件获取的配置实体
 	 * @param handler 业务处理器
 	 */
 	public NioConfig(SocketBean socketBean, IHandler handler) {
@@ -92,7 +93,6 @@ public abstract class NioConfig extends SocketBean implements IConfig {
 	 * 移除过滤器.
 	 * 此方法只在服务端启动前调用才生效.
 	 * @param name 过滤器名称
-	 * @param filter 过滤器接口
 	 */
 	public void delFilter(String name) {
 		filterChain.removeFilter(name);

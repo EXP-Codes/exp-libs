@@ -46,7 +46,7 @@ public class BaseConvert extends BaseFunctionN {
 	/**
 	 * 进制互转:10进制正整数 <-> 任意进制数(>=2, <=36)
 	 * 
-	 * @params 共2个参数,但根据类型有2种应用：
+	 * @param params 共2个参数,但根据类型有2种应用：
 	 * 		param[1] long:10进制正整数(>=0, 不在此范围则置值为0)
 	 * 		param[2] int:转换进制基数(>=2, <=36, 不在此范围则置值为10)
 	 * 		return String: n进制数
@@ -80,8 +80,8 @@ public class BaseConvert extends BaseFunctionN {
 	
 	/**
 	 * 进制转换: 任意进制数(>=2, <=36) -> 10进制正整数
-	 * @param1 String:任意进制数字符串(空串则置返回值为0)
-	 * @param2 int:所给定字符串的进制数(>=2, <=36, 不在此范围则置返回值为0)
+	 * @param baseNum String:任意进制数字符串(空串则置返回值为0)
+	 * @param base int:所给定字符串的进制数(>=2, <=36, 不在此范围则置返回值为0)
 	 * @return long:10进制数
 	 */
 	private Long base2Dec(String baseNum, int base) {
@@ -106,8 +106,8 @@ public class BaseConvert extends BaseFunctionN {
 	
 	/**
 	 * 进制转换:10进制正整数 -> 任意进制数(>=2, <=36)
-	 * @param1 int:10进制正整数(>=0, 不在此范围则置值为0)
-	 * @param2 int:转换进制基数(>=2, <=36, 不在此范围则置值为10)
+	 * @param dec int:10进制正整数(>=0, 不在此范围则置值为0)
+	 * @param base int:转换进制基数(>=2, <=36, 不在此范围则置值为10)
 	 * @return String: base进制数
 	 */
 	private String dec2Base(long dec, int base) {

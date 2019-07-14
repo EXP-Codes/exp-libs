@@ -891,30 +891,18 @@ public class HttpMethodDirector {
         return creds;
     }
 
-    /**
-     * @return
-     */
     public HostConfiguration getHostConfiguration() {
         return hostConfiguration;
     }
 
-    /**
-     * @return
-     */
     public HttpState getState() {
         return state;
     }
 
-    /**
-     * @return
-     */
     public HttpConnectionManager getConnectionManager() {
         return connectionManager;
     }
 
-    /**
-     * @return
-     */
     public HttpParams getParams() {
         return this.params;
     }

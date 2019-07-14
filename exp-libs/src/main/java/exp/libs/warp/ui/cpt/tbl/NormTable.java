@@ -77,7 +77,7 @@ public abstract class NormTable extends AbstractTable {
 	
 	/**
 	 * 返回当前行行号(优先返回选中行、其次是鼠标所在行， 否则返回-1)
-	 * @return
+	 * @return 当前行行号
 	 */
 	protected int getCurRow() {
 		return curRow;
