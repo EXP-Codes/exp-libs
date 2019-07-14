@@ -154,7 +154,7 @@ public class WebBrowser {
 	
 	/**
 	 * 获取WEB驱动
-	 * @return
+	 * @return WEB驱动
 	 */
 	public WebDriver DRIVER() {
 		return driver;
@@ -200,7 +200,7 @@ public class WebBrowser {
 	
 	/**
 	 * 获取当前页面路径
-	 * @return
+	 * @return 当前页面路径
 	 */
 	public String getCurURL() {
 		String url = "";
@@ -211,8 +211,8 @@ public class WebBrowser {
 	}
 	
 	/**
-	 * 获取页面源码
-	 * @return
+	 * 获取当前页面源码
+	 * @return 当前页面源码
 	 */
 	public String getPageSource() {
 		String ps = "";
@@ -224,8 +224,8 @@ public class WebBrowser {
 	
 	/**
 	 * 添加cookie
-	 * @param cookie
-	 * @return
+	 * @param cookie cookie对象
+	 * @return true:添加成功; false:添加失败
 	 */
 	public boolean addCookie(Cookie cookie) {
 		boolean isOk = true;
@@ -240,7 +240,7 @@ public class WebBrowser {
 	/**
 	 * 添加cookie集
 	 * @param cookies cookie集
-	 * @return
+	 * @return true:添加成功; false:添加失败
 	 */
 	public boolean addCookies(Set<Cookie> cookies) {
 		boolean isOk = true;
@@ -257,7 +257,7 @@ public class WebBrowser {
 	
 	/**
 	 * 获取cookie集
-	 * @return
+	 * @return cookie集
 	 */
 	public Set<Cookie> getCookies() {
 		return driver.manage().getCookies();

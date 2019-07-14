@@ -56,7 +56,7 @@ public class _Year extends __TimeUnit {
 
 	/**
 	 * 设置为"空"值, 使得该值对最终的cron规则无约束影响
-	 * @return
+	 * @return 年份时间字段的表达式
 	 */
 	public String withEmpty() {
 		return setSubExpression(EMPTY);
@@ -64,8 +64,8 @@ public class _Year extends __TimeUnit {
 	
 	/**
 	 * 检查[年份]值是否在合法范围内
-	 * @param year
-	 * @return
+	 * @param year 年份值
+	 * @return true:范围内; false:范围外
 	 */
 	private boolean inRange(int year) {
 		return (MIN <= year && year <= MAX);

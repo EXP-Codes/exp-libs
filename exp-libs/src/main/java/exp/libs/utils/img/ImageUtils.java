@@ -44,8 +44,8 @@ public class ImageUtils {
 	
 	/**
 	 * 读取图像
-	 * @param imgPath
-	 * @return
+	 * @param imgPath 图像路径
+	 * @return 图像缓存数据
 	 */
 	public static BufferedImage read(String imgPath) {
 		BufferedImage image = null;
@@ -59,10 +59,10 @@ public class ImageUtils {
 	
 	/**
 	 * 保存图像
-	 * @param image 
-	 * @param savePath
-	 * @param imageType
-	 * @return
+	 * @param image 图像缓存数据
+	 * @param savePath 图像保存位置
+	 * @param imageType 图像类型
+	 * @return true:保存成功; false:保存失败
 	 */
 	public static boolean write(BufferedImage image, String savePath, FileType imageType) {
 		boolean isOk = false;
@@ -165,7 +165,7 @@ public class ImageUtils {
 	 * 垂直切割图像
 	 * @param image 原图像
 	 * @param left 左起始边界索引, 取值范围：[0, image.Width)
-	 * @return 切割子图, 切割范围为 [left, left + offset)
+	 * @return 切割子图, 切割范围为 [left, right)
 	 */
 	public static BufferedImage cutVertical(BufferedImage image, int left) {
 		return cutVertical(image, left, -1);
@@ -202,10 +202,9 @@ public class ImageUtils {
 	
 	/**
 	 * 水平切割图像
-	 * @param image 原图像
+	 * @param image 原图像数据缓存
 	 * @param top 上起始边界索引, 取值范围：[0, image.Height)
-	 * @param offset 切割高度(-1表示切到末尾)
-	 * @return 切割子图, 切割范围为 [top, top + offset)
+	 * @return 切割子图, 切割范围为 [top, bottom)
 	 */
 	public static BufferedImage cutHorizontal(BufferedImage image, int top) {
 		return cutHorizontal(image, top, -1);
@@ -213,7 +212,7 @@ public class ImageUtils {
 	
 	/**
 	 * 水平切割图像
-	 * @param image 原图像
+	 * @param image 原图像数据缓存
 	 * @param top 上起始边界索引, 取值范围：[0, image.Height)
 	 * @param offset 切割高度(-1表示切到末尾)
 	 * @return 切割子图, 切割范围为 [top, top + offset)

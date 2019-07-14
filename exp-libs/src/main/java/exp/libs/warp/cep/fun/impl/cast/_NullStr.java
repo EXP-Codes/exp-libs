@@ -30,9 +30,8 @@ public class _NullStr extends BaseFunction1 {
 	
 	/**
 	 * 强制类型转换: 强制把任何值转换为空串
-	 * 仅1个入参：
-	 * @param1 Object:各种类型值
-	 * @return String:""
+	 * @param Object:各种类型值
+	 * @return String:空串""
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */
 	@Override

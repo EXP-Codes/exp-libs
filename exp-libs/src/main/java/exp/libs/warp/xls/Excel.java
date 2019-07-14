@@ -31,8 +31,8 @@ import exp.libs.utils.other.StrUtils;
  * 	Excel excel = new Excel("C:\\Users\\Administrator\\Desktop\\2003.xls");
  * 	excel.clear();	// 仅清空内存，不调用save/saveAs方法不会清空文件
  * 
- * 	List<String> header = Arrays.asList(new String[] { "序号", "姓名", "Remark" });
- * 	List<List<Object>> datas = new ArrayList<List<Object>>();
+ * 	List&lt;String&gt; header = Arrays.asList(new String[] { "序号", "姓名", "Remark" });
+ * 	List&lt;List&lt;Object&gt;&gt; datas = new ArrayList&lt;List&lt;Object&gt;&gt;();
  * 	datas.add(Arrays.asList(new Object[] { "1", "张三", 98.999D }));
  * 	datas.add(Arrays.asList(new Object[] { "2", "李四", 1234567890123L }));
  * 	datas.add(Arrays.asList(new Object[] { "3", "王五", new Date() }));
@@ -42,7 +42,7 @@ import exp.libs.utils.other.StrUtils;
  * 	boolean isOk = excel.saveAs("C:\\Users\\Administrator\\Desktop\\2007.xlsx");
  * 
  * 	Sheet sheet = excel.getSheet(0);
- * 	List<Object> rowDatas = sheet.getRowDatas(1);
+ * 	List&lt;Object&gt; rowDatas = sheet.getRowDatas(1);
  * 
  * 	sheet.delRow(1);	// 删除行
  * 	sheet.addRowDatas(Arrays.asList(new Object[] { "在末尾添加行" }));

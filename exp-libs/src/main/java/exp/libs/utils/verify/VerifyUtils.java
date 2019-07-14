@@ -31,7 +31,7 @@ public class VerifyUtils {
 	
 	/**
 	 * 测试字符是否为[ASCII控制字符].
-	 * @param ch 被测试字符
+	 * @param c 被测试字符
 	 * @return true:是; false:否
 	 */
 	public static boolean isASCIICtrl(final char c) {

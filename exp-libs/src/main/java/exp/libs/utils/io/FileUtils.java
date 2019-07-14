@@ -196,7 +196,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 	
 	/**
 	 * 检查文件是否都存在
-	 * @param filePath 文件路径集
+	 * @param filePaths 文件路径集
 	 * @return true:都存在; false:某些不存在
 	 */
 	public static boolean exists(String... filePaths) {
@@ -254,7 +254,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 	
 	/**
 	 * 检查文件是否都不存在
-	 * @param filePath 文件路径集
+	 * @param filePaths 文件路径集
 	 * @return true:都不存在; false:某些存在
 	 */
 	public static boolean notExists(String... filePaths) {
@@ -607,8 +607,8 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 	 *   4.snkFile 与 srcFile 不能同源, 但可同名
 	 *   5.若 snkFile 文件的祖先目录不存在则自动创建
 	 * </pre>
-	 * @param srcPath 源位置
-	 * @param snkPath 目标位置
+	 * @param srcFile 源文件对象
+	 * @param snkFile 目标文件对象
 	 */
 	public static boolean moveFile(File srcFile, File snkFile) {
 		boolean isOk = true;
@@ -1349,7 +1349,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 	
 	/**
 	 * 列举目录下的文件清单
-	 * @param dirPath 目录位置
+	 * @param dir 目录对象
 	 * @param extension 文件后缀
 	 * @return 后缀匹配的文件清单
 	 */
@@ -1409,8 +1409,8 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 	 * 	此方法仅适用于win系统. 
 	 * 	linux系统直接在文件名前加.即可实现隐藏
 	 * </PRE>
-	 * @param filePath
-	 * @return
+	 * @param file 文件对象
+	 * @return true:成功; false:失败
 	 */
 	public static boolean hide(File file) {
 		boolean isOk = false;

@@ -252,7 +252,7 @@ public class BODHUtils {
 	
 	/**
 	 * 十六进制数字串 -> 二进制数字串
-	 * @param dec 十六进制数字串
+	 * @param hex 十六进制数字串
 	 * @return 二进制数字串
 	 */
 	public static String hexToBin(String hex) {
@@ -286,7 +286,7 @@ public class BODHUtils {
 	
 	/**
 	 * 十六进制数字串 -> 八进制数字串
-	 * @param dec 十六进制数字串
+	 * @param hex 十六进制数字串
 	 * @return 八进制数字串
 	 */
 	public static String hexToOct(String hex) {
@@ -295,7 +295,7 @@ public class BODHUtils {
 	
 	/**
 	 * 十六进制数字串 -> 十进制数字串
-	 * @param dec 十六进制数字串
+	 * @param hex 十六进制数字串
 	 * @return 十进制数字串
 	 */
 	public static long hexToDec(String hex) {

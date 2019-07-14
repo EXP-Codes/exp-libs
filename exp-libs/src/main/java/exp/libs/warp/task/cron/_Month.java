@@ -107,7 +107,7 @@ public class _Month extends __TimeUnit {
 	/**
 	 * 设置为若干个月份触发
 	 * @param months 月份列表
-	 * @return
+	 * @return 月份时间字段的表达式
 	 */
 	public String withSequence(String... months) {
 		if(ListUtils.isNotEmpty(months)) {
@@ -129,7 +129,7 @@ public class _Month extends __TimeUnit {
 	 * 设置为从 from 月份开始, 每间隔 interval 个月触发
 	 * @param from 起始月份
 	 * @param interval 间隔月数
-	 * @return
+	 * @return 月份时间字段的表达式
 	 */
 	public String withStep(String from, int interval) {
 		Integer _from = MONTHS.get(from);
@@ -139,8 +139,8 @@ public class _Month extends __TimeUnit {
 	
 	/**
 	 * 检查[月份]值是否在合法范围内
-	 * @param month
-	 * @return
+	 * @param month 月份值
+	 * @return 月份时间字段的表达式
 	 */
 	private boolean inRange(int month) {
 		return (MIN <= month && month <= MAX);
@@ -148,8 +148,8 @@ public class _Month extends __TimeUnit {
 	
 	/**
 	 * 检查[月份]值是否在合法范围内
-	 * @param month
-	 * @return
+	 * @param month 月份值
+	 * @return true:范围内; false:范围外
 	 */
 	private boolean inRange(String month) {
 		return MONTHS.containsKey(month);

@@ -32,11 +32,7 @@ public class Concat extends BaseFunctionN {
 	
 	/**
 	 * 字符串拼接.若出现null串则跳过.
-	 * N个入参：
-	 * @param1 String:字符串1
-	 * @param2 String:字符串2
-	 * @param... String:字符串...
-	 * @paramN String:字符串N
+	 * @param 若干个字符串
 	 * @return String: 所有字符串顺序拼接
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */

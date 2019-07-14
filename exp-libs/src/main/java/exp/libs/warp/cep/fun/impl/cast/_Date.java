@@ -44,10 +44,10 @@ public class _Date extends BaseFunctionN {
 	
 	/**
 	 * 强制类型转换: String -> Date
-	 * 1个或2个入参：
-	 * @param1 String:日期字符串
-	 * @param1 String:日期字符串的格式，无此参数则认为是 yyyy-MM-dd HH:mm:ss 格式
-	 * @return Date
+	 * @param params 1个或2个入参：
+	 * 		param[1] String:日期字符串.
+	 * 		param[2] String:日期字符串的格式，无此参数则认为是 yyyy-MM-dd HH:mm:ss 格式.
+	 * @return Date 日期对象
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */
 	@Override

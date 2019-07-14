@@ -685,7 +685,7 @@ public class XConfig implements Runnable, _IConfig {
 
 	/**
 	 * 获取固定格式配置对象 - Redis数据源.
-	 * @param Id 数据源标签的id属性值
+	 * @param redisId 数据源标签的id属性值
 	 * @return 若无效则返回默认数据源对象 (绝对不返回null)
 	 */
 	@Override

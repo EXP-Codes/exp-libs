@@ -165,8 +165,7 @@ public class Telnet {
 	/**
 	 * 断开连接
 	 * 
-	 * @param null
-	 * @return boolean
+	 * @return true:断开成功; false:断开失败
 	 */
 	public boolean disConnect() {
 		try {

@@ -37,7 +37,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <release.dir>${project.build.directory}/${project.artifactId}-${project.version}</release.dir>
-        <jdk.version>1.6</jdk.version>
+        <jdk.version>1.8</jdk.version>
         <mrp.plugin.version>1.0</mrp.plugin.version>
     </properties>
 
@@ -406,6 +406,12 @@
           <groupId>org.seleniumhq.selenium</groupId>
           <artifactId>selenium-htmlunit-driver</artifactId>
           <version>2.44.0</version>
+          <exclusions>
+            <exclusion>
+              <groupId>xml-apis</groupId>
+              <artifactId>xml-apis</artifactId>
+            </exclusion>
+          </exclusions>
         </dependency>
         
         <!-- soapUI: webservice-client -->
@@ -428,6 +434,12 @@
           <groupId>org.apache.xmlbeans</groupId>
           <artifactId>xmlbeans</artifactId>
           <version>2.6.0</version>
+          <exclusions>
+            <exclusion>
+              <groupId>stax</groupId>
+              <artifactId>stax-api</artifactId>
+            </exclusion>
+          </exclusions>
         </dependency>
         <dependency>
           <groupId>net.webservices.client</groupId>
@@ -445,6 +457,19 @@
           <version>1.2.17</version>
           <!-- scope>runtime</scope -->	<!-- wsdl等第三方包需要用 -->
         </dependency>
+        
+        <!-- soapUI: webservice-server -->
+		<dependency>
+		  <groupId>xml-apis</groupId>
+		  <artifactId>xml-apis</artifactId>
+		  <version>1.4.01</version>
+		</dependency>
+		
+		<dependency>
+		  <groupId>javax.xml.ws</groupId>
+		  <artifactId>jaxws-api</artifactId>
+		  <version>2.2.11</version>
+		</dependency>
     
         <!-- axis2-client -->
         <dependency>
@@ -648,7 +673,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.3.2</version>
                 <configuration>
                     <!-- 项目的SVN基线目录（需保证目录已存在） -->
                     <tagBase>https://github.com/lyy289065406/exp-libs/tags</tagBase>
@@ -659,7 +683,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.7.2</version>
                 <configuration>
                     <!-- 解决控制台输出乱码问题 -->
                     <forkMode>once</forkMode>
@@ -679,7 +702,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.7</version>
                 <executions>
                     <execution>
                         <id>ant-build</id>
@@ -756,12 +778,17 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
                 <configuration>
                     <aggregate>true</aggregate>
                     <charset>UTF-8</charset>
                     <encoding>UTF-8</encoding>
                     <docencoding>UTF-8</docencoding>
+                    
+                    <!-- 从JDK8开始, Javadoc中添加了doclint, 目的是旨在获得符合W3C HTML 4.01标准规范的HTML文档 -->
+                    <!-- 简而言之Javadoc不允许出现html相关的元素, 若旧注释含有这些元素又不想修改, 只能关闭doclint -->
+                    <additionalOptions>
+                        <additionalOption>-Xdoclint:none</additionalOption>
+                    </additionalOptions>
                 </configuration>
                 <executions>
                     <execution>
