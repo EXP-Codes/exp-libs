@@ -40,11 +40,11 @@ public class Replace extends BaseFunctionN {
 	
 	/**
 	 * 字符串正则替换.
-	 * 共3个参数：
-	 * @param1 String:原字符串
-	 * @param2 String:正则表达式
-	 * @param2 String:替代字符串
-	 * @return String
+	 * @param 共3个参数：
+	 * 		param[1] String:原字符串
+	 * 		param[2] String:正则表达式
+	 * 		param[2] String:替代字符串
+	 * @return String:正则替换后的字符串
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */
 	@Override

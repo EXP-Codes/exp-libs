@@ -53,7 +53,7 @@ public class WebKitCookie extends HttpCookie {
 	
 	/**
 	 * 添加多个selenium的cookie
-	 * @param cookie
+	 * @param cookies cookie列表
 	 */
 	public void add(Collection<Cookie> cookies) {
 		if(cookies != null) {

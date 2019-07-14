@@ -76,7 +76,7 @@ public interface FTPConnection {
 	 * 获取文件大小
 	 *
 	 * @param remoteFileName 远程文件名
-	 * @return
+	 * @return 文件大小
 	 * @throws IOException 
 	 */
 	public long getFileLength(String remoteFileName) throws IOException;
@@ -85,7 +85,7 @@ public interface FTPConnection {
 	 * 获取文件最后修改时间
 	 *
 	 * @param remoteFileName 远程文件名
-	 * @return
+	 * @return 文件最后修改时间
 	 * @throws IOException 
 	 */
 	public long getLastModified(String remoteFileName) throws IOException;

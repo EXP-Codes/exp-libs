@@ -28,7 +28,7 @@ public class XlsUtils {
 	 * 
 	 * @param excel Excel工作簿对象
 	 * @param fontName 字体名称, 如: 宋体
-	 * @param size 字体大小, 如: (short) 9
+	 * @param fontSize 字体大小, 如: (short) 9
 	 * @return 单元格格式
 	 */
 	public static CellStyle getCellStyle(Excel excel, 
@@ -68,7 +68,7 @@ public class XlsUtils {
 	 * 
 	 * @param excel Excel工作簿对象
 	 * @param fontName 字体名称, 如: 宋体
-	 * @param size 字体大小, 如: (short) 9
+	 * @param fontSize 字体大小, 如: (short) 9
 	 * @param bgColor 单元格背景色, 如：HSSFColor.LIGHT_GREEN.index
 	 * @param alignCenter 是否完全居中(水平+垂直方向居中)
 	 * @return 单元格格式

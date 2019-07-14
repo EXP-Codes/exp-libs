@@ -56,7 +56,7 @@ public class _Day extends __TimeUnit {
 
 	/**
 	 * 设置为"无意义"值, 使得该值对最终的cron规则无约束影响
-	 * @return
+	 * @return 日期时间字段的表达式
 	 */
 	public String withNone() {
 		return setSubExpression(NONE);
@@ -64,7 +64,7 @@ public class _Day extends __TimeUnit {
 	
 	/**
 	 * 设置为: 即某月的最后一天触发
-	 * @return
+	 * @return 日期时间字段的表达式
 	 */
 	public String withLastDay() {
 		return setSubExpression(L);
@@ -72,8 +72,8 @@ public class _Day extends __TimeUnit {
 	
 	/**
 	 * 设置为: 在离日期day最近的"工作日"触发
-	 * @param day
-	 * @return
+	 * @param day 日期值
+	 * @return 日期时间字段的表达式
 	 */
 	public String withWorkday(int day) {
 		return !_checkRange(day) ? getSubExpression() : 
@@ -82,7 +82,7 @@ public class _Day extends __TimeUnit {
 	
 	/**
 	 * 设置为: 某月的最后一个工作日触发
-	 * @return
+	 * @return 日期时间字段的表达式
 	 */
 	public String withLastWorkday() {
 		return setSubExpression(LW);
@@ -90,8 +90,8 @@ public class _Day extends __TimeUnit {
 	
 	/**
 	 * 设置为: 日历中day日以后的第一天
-	 * @param day
-	 * @return
+	 * @param day 日期值
+	 * @return 日期时间字段的表达式
 	 */
 	public String withAfterDay(int day) {
 		return !_checkRange(day) ? getSubExpression() : 
@@ -100,8 +100,8 @@ public class _Day extends __TimeUnit {
 
 	/**
 	 * 检查[日期]值是否在合法范围内
-	 * @param day
-	 * @return
+	 * @param day 日期值
+	 * @return true:范围内; false:范围外
 	 */
 	private boolean inRange(int day) {
 		return (MIN <= day && day <= MAX);

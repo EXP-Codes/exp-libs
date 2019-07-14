@@ -89,9 +89,8 @@ public class WebUtils {
 	
 	/**
 	 * 切换到嵌套页面的frame
-	 * @param driver 
-	 * @param frame
-	 * @return
+	 * @param driver web驱动
+	 * @param frame frame元素位置
 	 */
 	public static void switchToFrame(WebDriver driver, By frame) {
 		try {
@@ -104,7 +103,7 @@ public class WebUtils {
 	
 	/**
 	 * 切换到上层frame
-	 * @param driver
+	 * @param driver web驱动
 	 */
 	public static void switchToParentFrame(WebDriver driver) {
 		try {
@@ -117,7 +116,7 @@ public class WebUtils {
 	
 	/**
 	 * 切换到顶层frame（默认层）
-	 * @param driver
+	 * @param driver web驱动
 	 */
 	public static void switchToTopFrame(WebDriver driver) {
 		try {
@@ -130,9 +129,9 @@ public class WebUtils {
 	
 	/**
 	 * 测试页面元素是否存在
-	 * @param driver
-	 * @param element
-	 * @return
+	 * @param driver web驱动
+	 * @param by 元素位置
+	 * @return true:存在; false:不存在
 	 */
 	public static boolean exist(WebDriver driver, By by) {
 		return (findElement(driver, by) != null);

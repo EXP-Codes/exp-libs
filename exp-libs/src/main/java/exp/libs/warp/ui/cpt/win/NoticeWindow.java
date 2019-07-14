@@ -1,7 +1,5 @@
 package exp.libs.warp.ui.cpt.win;
 
-import com.sun.awt.AWTUtilities;
-
 import exp.libs.utils.os.ThreadUtils;
 
 
@@ -17,7 +15,7 @@ import exp.libs.utils.os.ThreadUtils;
  * @author    EXP: 272629724@qq.com
  * @since     jdk版本：jdk1.6
  */
-@SuppressWarnings({ "serial", "restriction" })
+@SuppressWarnings("serial")
 public abstract class NoticeWindow extends PopChildWindow implements Runnable {
 
 	private Thread _this;
@@ -78,7 +76,7 @@ public abstract class NoticeWindow extends PopChildWindow implements Runnable {
 		
 		// 透明度渐隐(大约持续3秒)
 		for(float opacity = 100; opacity > 0; opacity -= 2) {
-			AWTUtilities.setWindowOpacity(this, opacity / 100);	// 设置透明度
+			this.setOpacity(opacity / 100);	// 设置透明度
 			ThreadUtils.tSleep(60);
 			
 			if(isVisible() == false) {

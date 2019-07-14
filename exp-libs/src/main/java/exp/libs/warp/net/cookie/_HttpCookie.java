@@ -120,7 +120,7 @@ class _HttpCookie {
 	
 	/**
 	 * cookie是否有效
-	 * @return
+	 * @return true:有效; false:无效
 	 */
 	protected boolean isVaild() {
 		return StrUtils.isNotEmpty(name);

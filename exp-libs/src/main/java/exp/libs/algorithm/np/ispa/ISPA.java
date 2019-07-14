@@ -32,7 +32,7 @@ public class ISPA {
 	/**
 	 * 求解
 	 * @param graph 拓扑图
-	 * @return
+	 * @return 求解结果
 	 */
 	public static ISPARst solve(final TopoGraph graph) {
 		ISPARst rst = new ISPARst();
@@ -59,8 +59,8 @@ public class ISPA {
 	
 	/**
 	 * 无必经点的最短路问题， 使用最短路算法求解
-	 * @param graph
-	 * @return
+	 * @param graph 拓扑图
+	 * @return 求解结果
 	 */
 	protected static ISPARst solveBySPA(final TopoGraph graph) {
 		final Dijkstra dijkstra = new Dijkstra(graph.getAdjacencyMatrix());
@@ -92,8 +92,8 @@ public class ISPA {
 	
 	/**
 	 * 含有序必经点的最短路问题，使用分段最短路算法求解
-	 * @param graph
-	 * @return
+	 * @param graph 拓扑图
+	 * @return 求解结果
 	 */
 	protected static ISPARst solveBySegmentSPA(final TopoGraph graph) {
 		List<Integer> includeIds = _getIncludeIds(graph);
@@ -190,8 +190,8 @@ public class ISPA {
 	
 	/**
 	 * 含无序必经点的最短路问题， 使用启发式算法求解
-	 * @param graph
-	 * @return
+	 * @param graph 拓扑图
+	 * @return 求解结果
 	 */
 	protected static ISPARst solveByHeuristicAlgorithm(final TopoGraph graph) {
 		ISPARst rst = new ISPARst();
