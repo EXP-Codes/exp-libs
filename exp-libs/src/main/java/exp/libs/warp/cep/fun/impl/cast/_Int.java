@@ -31,7 +31,7 @@ public class _Int extends BaseFunction1 {
 	
 	/**
 	 * 强制类型转换: String -> Integer
-	 * @param String:数字字符串
+	 * @param param String:数字字符串
 	 * @return Integer:整型
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */

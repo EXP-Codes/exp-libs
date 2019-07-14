@@ -33,8 +33,7 @@ public class Sec2Date extends BaseFunction1 {
 	
 	/**
 	 * 纪元秒 -> yyyy-MM-dd HH:mm:ss 转换.
-	 * 共1个入参：
-	 * @param1 Long: 纪元秒
+	 * @param Long: 纪元秒
 	 * @return String: yyyy-MM-dd HH:mm:ss格式的日期
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */

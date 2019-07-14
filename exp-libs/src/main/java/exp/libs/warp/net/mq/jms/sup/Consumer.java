@@ -565,8 +565,7 @@ public class Consumer {
 	/**
 	 * 收到消息后进行响应，以便消息生产者进行onMessageConsumed回调
 	 * 
-	 * @param message
-	 *            响应的消息，该消息的<code>JMSReplyTo</code>必须和接收到的消息一致
+	 * @param message 响应的消息，该消息的<code>JMSReplyTo</code>必须和接收到的消息一致
 	 * @see AbstractProducerCallBack#onMessageConsumed(Message)
 	 * @see Message#setJMSReplyTo(String)
 	 * @throws JMSException

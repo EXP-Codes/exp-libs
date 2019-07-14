@@ -18,15 +18,14 @@ public interface _IWsdlService {
     
 	/**
 	 * 自定义接口服务
-	 * @param param
-	 * @return
+	 * @param param 样例入参
+	 * @return 样例出参
 	 */
 	public String foo(String param);  
 	
 	/**
 	 * 自定义接口服务
-	 * @param param
-	 * @return
+	 * @param param 样例入参
 	 */
     public void bar(int param);  
     

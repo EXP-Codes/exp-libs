@@ -30,7 +30,7 @@ public class Trim extends BaseFunction1 {
 	
 	/**
 	 * 去除字符串头尾空字符.
-	 * @param String:原字符串
+	 * @param param String:原字符串
 	 * @return String:处理后的字符串
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */

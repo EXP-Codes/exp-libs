@@ -30,7 +30,7 @@ public class Reverse extends BaseFunction1 {
 
 	/**
 	 * 字符串反转.
-	 * @param String:原字符串
+	 * @param param String:原字符串
 	 * @return String:反转后的字符串
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */

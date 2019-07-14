@@ -76,7 +76,7 @@ public abstract class AbstractTable extends _BaseTable {
 	
 	/**
 	 * 插入到顶端
-	 * @param rowData
+	 * @param rowData 行数据
 	 */
 	public void addTop(List<String> rowData) {
 		add(rowData, 0);
@@ -84,7 +84,7 @@ public abstract class AbstractTable extends _BaseTable {
 	
 	/**
 	 * 插入到底部
-	 * @param rowData
+	 * @param rowData 行数据
 	 */
 	public void addBtm(List<String> rowData) {
 		add(rowData, Integer.MAX_VALUE);
@@ -92,7 +92,7 @@ public abstract class AbstractTable extends _BaseTable {
 	
 	/**
 	 * 插入到表单（默认在顶端）
-	 * @param rowData
+	 * @param rowData 行数据
 	 */
 	public void add(List<String> rowData) {
 		addTop(rowData);
@@ -101,7 +101,7 @@ public abstract class AbstractTable extends _BaseTable {
 	/**
 	 * 删除行数据
 	 * @param rowIdx 行索引
-	 * @return
+	 * @return 被删除的行数据
 	 */
 	public List<String> del(int rowIdx) {
 		List<String> rowData = new LinkedList<String>();
@@ -115,7 +115,7 @@ public abstract class AbstractTable extends _BaseTable {
 	/**
 	 * 获取行数据
 	 * @param rowIdx 行索引
-	 * @return
+	 * @return 指定行数据
 	 */
 	public List<String> getRowData(int rowIdx) {
 		List<String> rowData = new LinkedList<String>();
@@ -128,7 +128,7 @@ public abstract class AbstractTable extends _BaseTable {
 	
 	/**
 	 * 获取当前选择行的行数据
-	 * @return
+	 * @return 当前选择行的行数据
 	 */
 	public List<String> getSelectedRowData() {
 		return getRowData(getCurSelectRow());

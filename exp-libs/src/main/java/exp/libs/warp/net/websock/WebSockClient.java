@@ -79,7 +79,7 @@ public class WebSockClient extends LoopThread {
 	
 	/**
 	 * 设置心跳模式: 对websocket会话启用心跳保活
-	 * @param heartbeat 发送到服务端的心跳数据帧
+	 * @param hbFrame 发送到服务端的心跳数据帧
 	 * @param hbTime 心跳间隔(单位:秒)
 	 */
 	public void setHeartbeat(Frame hbFrame, int hbTime) {
@@ -96,7 +96,7 @@ public class WebSockClient extends LoopThread {
 	
 	/**
 	 * 连接到websocket服务器
-	 * @return
+	 * @return 是否连接成功
 	 */
 	public boolean conn() {
 		boolean isOk = _conn();

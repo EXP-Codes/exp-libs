@@ -76,7 +76,7 @@ public class TopoGraph extends Graph {
 	
 	/**
 	 * 是否存在必经点
-	 * @return
+	 * @return true:存在; false:不存在
 	 */
 	public boolean existInclusive() {
 		return !includes.isEmpty();
@@ -84,15 +84,15 @@ public class TopoGraph extends Graph {
 	
 	/**
 	 * 必经点是否有序
-	 * @return
+	 * @return true:有序; false:无序
 	 */
 	public boolean isOrderInclusive() {
 		return order;
 	}
 	
 	/**
-	 * 必经点数量
-	 * @return
+	 * 获取必经点数量
+	 * @return 必经点数量
 	 */
 	public int inclusiveSize() {
 		return includes.size();

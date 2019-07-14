@@ -41,10 +41,10 @@ public class GetYear extends BaseFunctionN {
     }
 	
 	/**
-	 * 获取当前系统时间的字符串.
+	 * 获取当前系统年份的字符串.
 	 * 可选0个或1个入参：
-	 * @param1 String(可选):获取时间的格式,若无此参数则默认为 yyyy-MM-dd HH:mm:ss
-	 * @return String
+	 * @param String(可选):获取时间的格式,若无此参数则默认为 yyyy
+	 * @return String:当前系统年份
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */
 	@Override

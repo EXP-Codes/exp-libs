@@ -40,7 +40,7 @@ public class Cut extends BaseFunctionN {
 	
 	/**
 	 * 字符串切割,任何非法的起止标识都只会返回原字符串.
-	 * @param 共3个入参：
+	 * @param params 共3个入参：
 	 * 		param[1] String:原字符串
 	 * 		param[2] int:切割起点,从0开始（包括）
 	 * 		param[3] int： 切割止点（不包括）

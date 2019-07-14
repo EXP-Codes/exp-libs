@@ -309,9 +309,6 @@ class _HttpClient {
 	 * @param url 资源路径
 	 * @param header 请求头参数表
 	 * @param request 请求参数表
-	 * @param connTimeout 连接超时（ms）
-	 * @param readTimeout 读取超时（ms）
-	 * @param charset 字符集编码
 	 * @return 是否下载成功（下载成功会保存到savePath）
 	 */
 	public boolean downloadByGet(String savePath, String url, 
@@ -332,9 +329,6 @@ class _HttpClient {
 	 * @param url 资源路径
 	 * @param header 请求头参数表
 	 * @param request 请求参数表
-	 * @param connTimeout 连接超时（ms）
-	 * @param readTimeout 读取超时（ms）
-	 * @param charset 字符集编码
 	 * @return 是否下载成功（下载成功会保存到savePath）
 	 * @throws Exception
 	 */
@@ -359,7 +353,7 @@ class _HttpClient {
 	 * 保存HTTP资源
 	 * @param method 请求方法
 	 * @param savePath 包括文件名的保存路径
-	 * @return
+	 * @return 是否保存成功（下载成功会保存到savePath）
 	 */
 	private boolean responseAsRes(HttpMethod method, String savePath) {
 		boolean isOk = false;
@@ -376,8 +370,8 @@ class _HttpClient {
 	
 	/**
 	 * 添加请求头参数参数
-	 * @param method
-	 * @param params
+	 * @param method 请求方法
+	 * @param params 请求参数表
 	 */
 	private void addParamsToHeader(HttpMethod method, Map<String, String> params) {
 		if(params != null) {
@@ -392,8 +386,8 @@ class _HttpClient {
 	
 	/**
 	 * 添加post方法的请求参数
-	 * @param post
-	 * @param params
+	 * @param post post请求方法
+	 * @param params 请求参数表
 	 */
 	private void addParamsToBody(PostMethod post, Map<String, String> params) {
 		if(params != null) {

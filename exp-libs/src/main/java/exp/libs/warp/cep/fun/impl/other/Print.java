@@ -35,13 +35,12 @@ public class Print extends BaseFunctionN {
 	
 	/**
 	 * 打印消息到 标准流、异常流、或文件.
-	 * 共2个入参：
-	 * @param1 String:需要打印的消息
-	 * @param2 String:
-	 * 	输出位置:
-	 * 	"out":标准流
-	 * 	"err":异常流(默认)
-	 * 	两者都不是:认为是文件路径(若路径异常自动切回默认值,并打印异常原因)
+	 * @param 共2个入参：
+	 * 		param[1] String:需要打印的消息
+	 * 		param2 String:输出位置:
+	 * 			"out":标准流
+	 * 			"err":异常流(默认)
+	 * 			两者都不是:认为是文件路径(若路径异常自动切回默认值,并打印异常原因)
 	 * @return Boolean: true:打印成功; false:打印失败
 	 * @throws EvaluationException 若执行失败则抛出异常
 	 */

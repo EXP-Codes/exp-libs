@@ -99,8 +99,8 @@ public class HttpUtils {
 	
 	/**
 	 * 判断HTTP请求是否响应成功
-	 * @param conn
-	 * @return
+	 * @param conn HTTP连接
+	 * @return true:返回200状态码; false:返回非200状态码
 	 */
 	public static boolean isResponseOK(HttpURLConnection conn) {
 		boolean isOk = false;
@@ -114,8 +114,8 @@ public class HttpUtils {
 	
 	/**
 	 * 判断HTTP响应状态码是否为成功
-	 * @param responseCode 响应状态码
-	 * @return
+	 * @param httpStatus 响应状态码
+	 * @return true:返回200状态码; false:返回非200状态码
 	 */
 	public static boolean isResponseOK(int httpStatus) {
 		return (httpStatus == HttpStatus.SC_OK);
@@ -258,7 +258,7 @@ public class HttpUtils {
 
 	/**
 	 * 关闭HTTP/HTTPS连接
-	 * @param httpClient
+	 * @param conn HTTP/HTTPS连接
 	 */
 	public static void close(HttpURLConnection conn) {
 		if(conn != null) {
@@ -268,7 +268,7 @@ public class HttpUtils {
 	
 	/**
 	 * 创建HttpClient会话(不支持TLSv1.2)
-	 * @return
+	 * @return HTTP会话
 	 */
 	public static HttpClient createHttpClient() {
 		return createHttpClient(CONN_TIMEOUT, CALL_TIMEOUT);
@@ -276,9 +276,9 @@ public class HttpUtils {
 
 	/**
 	 * 创建HttpClient会话(不支持TLSv1.2)
-	 * @param connTimeout
-	 * @param callTimeout
-	 * @return
+	 * @param connTimeout 连接超时时间(ms)
+	 * @param callTimeout 请求超时时间(ms)
+	 * @return HTTP会话
 	 */
 	public static HttpClient createHttpClient(int connTimeout, int callTimeout) {
 		if(OSUtils.isJDK16() || OSUtils.isJDK17()) {
@@ -307,7 +307,6 @@ public class HttpUtils {
 	 *  主要用于解决 JDK1.6 和 JDK1.7 不支持 TLSv1.2 的问题.
 	 *  注意此方法不能与绕过SSL校验 {@link #_bypassSSL()} 共用
 	 * </pre>
-	 * @param httpsConn
 	 */
 	private static void _supportTLSv12() {
 		Protocol sslProtocol = Protocol.getProtocol(HTTPS);
@@ -319,7 +318,7 @@ public class HttpUtils {
 	
 	/**
 	 * 关闭HttpClient会话
-	 * @param httpClient
+	 * @param httpClient HTTP会话
 	 */
 	public static void close(HttpClient httpClient) {
 		if(httpClient != null) {

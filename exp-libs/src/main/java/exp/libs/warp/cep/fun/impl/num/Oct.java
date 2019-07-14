@@ -31,7 +31,7 @@ public class Oct extends BaseFunction1 {
 	
 	/**
 	 * 进制转换： 10 -> 8
-	 * @param Integer/String:10进制数值(字符串)
+	 * @param param Integer/String:10进制数值(字符串)
 	 * @return String: 8进制数值字符串
 	 * @exception EvaluationException 若解析失败则抛出异常
 	 */

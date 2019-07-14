@@ -167,8 +167,8 @@ abstract class _SwingWindow extends JFrame {
 	/**
 	 * 是否主窗口, 影响关闭窗口模式.
 	 *  是: 使用主窗口模式(点击右上角x会关闭所有进程)
-	 *  是: 使用子窗口模式(点击右上角x会隐藏当前窗口)
-	 * @return 
+	 *  否: 使用子窗口模式(点击右上角x会隐藏当前窗口)
+	 * @return 当前窗口是否为主窗口
 	 */
 	protected abstract boolean isMainWindow();
 	
