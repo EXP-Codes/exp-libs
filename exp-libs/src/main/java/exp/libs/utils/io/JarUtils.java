@@ -148,7 +148,7 @@ public class JarUtils {
 			bos.close();
 			
 		} catch (Exception e) {
-			log.error("读取Jar内文件失败: ", packagePath, e);
+			log.error("读取Jar内文件失败: [{}]", packagePath, e);
 		}
 		IOUtils.close(is);
 		return str;
@@ -195,7 +195,7 @@ public class JarUtils {
 			}
 			jar.close();
 		} catch (Exception e) {
-			log.error("读取Jar内文件列表失败: ", 
+			log.error("读取Jar内文件列表失败: [{}]", 
 					(jarFile == null ? "null" : jarFile.getPath()), e);
 		}
 		return list;
