@@ -871,7 +871,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
         	str = org.apache.commons.io.FileUtils.readFileToString(file);
         	
 		} catch (Exception e) {
-			log.error("读取文件失败: ", (file == null ? "null" : file.getPath()), e);
+			log.error("读取文件失败: [{}]", (file == null ? "null" : file.getPath()), e);
 		}
         return str;
     }
@@ -907,7 +907,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
         	str = org.apache.commons.io.FileUtils.readFileToString(file, charset);
         	
 		} catch (Exception e) {
-			log.error("读取文件失败: ", (file == null ? "null" : file.getPath()), e);
+			log.error("读取文件失败: [{}]", (file == null ? "null" : file.getPath()), e);
 		}
         return str;
     }
@@ -941,7 +941,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
         	lines = org.apache.commons.io.FileUtils.readLines(file);
         	
 		} catch (Exception e) {
-			log.error("读取文件失败: ", (file == null ? "null" : file.getPath()), e);
+			log.error("读取文件失败: [{}]", (file == null ? "null" : file.getPath()), e);
 		}
         return lines;
 	}
@@ -977,7 +977,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
         	lines = org.apache.commons.io.FileUtils.readLines(file, charset);
         	
 		} catch (Exception e) {
-			log.error("读取文件失败: ", (file == null ? "null" : file.getPath()), e);
+			log.error("读取文件失败: [{}]", (file == null ? "null" : file.getPath()), e);
 		}
         return lines;
 	}
@@ -1054,7 +1054,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
         	
 		} catch (Exception e) {
 			isOk = false;
-			log.error("写文件失败: ", (file == null ? "null" : file.getPath()), e);
+			log.error("写文件失败: [{}]", (file == null ? "null" : file.getPath()), e);
 		}
         return isOk;
 	}
@@ -1091,7 +1091,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
         	
 		} catch (Exception e) {
 			isOk = false;
-			log.error("写文件失败: ", (file == null ? "null" : file.getPath()), e);
+			log.error("写文件失败: [{}]", (file == null ? "null" : file.getPath()), e);
 		}
         return isOk;
 	}
@@ -1128,7 +1128,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
         	
 		} catch (Exception e) {
 			isOk = false;
-			log.error("写文件失败: ", (file == null ? "null" : file.getPath()), e);
+			log.error("写文件失败: [{}]", (file == null ? "null" : file.getPath()), e);
 		}
         return isOk;
 	}
@@ -1167,7 +1167,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
         	
 		} catch (Exception e) {
 			isOk = false;
-			log.error("写文件失败: ", (file == null ? "null" : file.getPath()), e);
+			log.error("写文件失败: [{}]", (file == null ? "null" : file.getPath()), e);
 		}
         return isOk;
 	}
