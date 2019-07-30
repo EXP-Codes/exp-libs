@@ -13,8 +13,6 @@ import org.apache.poi.ss.usermodel.Hyperlink;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFHyperlink;
 
-import exp.libs.warp.db.redis.bean.RedisBean;
-
 /**
  * <PRE>
  * Sheet页，需配合Excel工作簿使用.
