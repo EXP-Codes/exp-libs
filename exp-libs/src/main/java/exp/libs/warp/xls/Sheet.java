@@ -13,6 +13,8 @@ import org.apache.poi.ss.usermodel.Hyperlink;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFHyperlink;
 
+import exp.libs.warp.db.redis.bean.RedisBean;
+
 /**
  * <PRE>
  * Sheet页，需配合Excel工作簿使用.
@@ -534,7 +536,7 @@ public class Sheet {
 	 * 设置单元格格式
 	 * @param row 行索引（从0开始）
 	 * @param col 列索引（从0开始）
-	 * @param style 单元格格式
+	 * @param style 单元格格式: {@link Excel#createCellStyle()}
 	 */
 	public void setStyle(int row, int col, CellStyle style) {
 		if(!isNull() && _inRange(row, col)) {
