@@ -67,10 +67,10 @@ public final class OSUtils {
 			isWin = true;
 			
 		} else if(OS_NAME.contains("mac")) {
-			isWin = false;	//暂不可能mac平台上运行, 否则这段代码需修改
+			isWin = false;	// mac 属 unix 其实也是支持界面运行的
 			
 		} else {
-			isWin = false;	//linux
+			isWin = false;	// linux
 		}
 		return isWin;
 	}

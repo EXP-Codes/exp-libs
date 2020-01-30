@@ -19,7 +19,7 @@ import exp.libs.utils.other.StrUtils;
 public abstract class HttpCookie {
 	
 	/** 换行符 */
-	protected final static String LFCR = "\r\n";
+	protected final static String CR = "\n";
 	
 	/** cookie属性集 */
 	protected List<_HttpCookie> cookies;
@@ -47,7 +47,7 @@ public abstract class HttpCookie {
 		this();
 		
 		if(StrUtils.isNotEmpty(headerCookies)) {
-			String[] lines = headerCookies.split(LFCR);
+			String[] lines = headerCookies.split(CR);
 			for(int i = 0; i < lines.length; i++) {
 				add(lines[i]);
 			}
@@ -128,7 +128,7 @@ public abstract class HttpCookie {
 	public String toHeaderCookie() {
 		StringBuilder sb = new StringBuilder();
 		for(_HttpCookie cookie : cookies) {
-			sb.append(cookie.toString()).append(LFCR);
+			sb.append(cookie.toString()).append(CR);
 		}
 		return sb.toString();
 	}
