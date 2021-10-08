@@ -9,7 +9,7 @@
 
 ## 环境
 
-　![](https://img.shields.io/badge/Platform-Windows|Unix-brightgreen.svg) ![](https://img.shields.io/badge/IDE-Eclipse-brightgreen.svg) ![](https://img.shields.io/badge/Maven-3.2.5%2B-brightgreen.svg) ![](https://img.shields.io/badge/JDK-1.6%2B-brightgreen.svg)
+　![](https://img.shields.io/badge/Platform-Windows|Unix-brightgreen.svg) ![](https://img.shields.io/badge/IDE-Idea-brightgreen.svg) ![](https://img.shields.io/badge/Maven-3.2.5%2B-brightgreen.svg) ![](https://img.shields.io/badge/JDK-1.8%2B-brightgreen.svg)
 
 
 ## 简介
