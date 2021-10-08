@@ -21,7 +21,7 @@
 
 ## 安装与使用
 
-　由于`exp-libs`封装了大量第三方构件，因此需要在**开发环境**直接导入到Maven的`pom.xml`文件使用，<br/>　利用pom文件自动加载第三方依赖构件（若仅导入单个`exp-libs.jar`，有很多功能是无法使用的）。
+由于 `exp-libs` 依赖了大量第三方构件并封装，若仅导入本项目的 `exp-libs.jar`，有很多功能是无法使用的。关于导入相关依赖的方法可参看 [这里](./exp-libs/lib/README.md) 。
 
 - [在线Javadoc](https://lyy289065406.github.io/api-online/javadoc/exp-libs/1.1/index.html)
 - POM坐标（完全版）：
@@ -41,7 +41,7 @@
 </dependency>
 ```
 
-> 含有此构件的 [Nexus 仓库](https://github.com/lyy289065406/nexus-docker/tree/produce)
+> 含有此构件的 [Nexus 仓库](https://github.com/lyy289065406/nexus-docker/tree/produce)（需要切换到 produce 分支并使用 docker 运行）
 
 
 ## 功能模块

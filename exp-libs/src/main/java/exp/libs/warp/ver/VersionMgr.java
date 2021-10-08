@@ -48,7 +48,7 @@ final public class VersionMgr {
 	 * 构造函数
 	 */
 	private VersionMgr() {
-		if(OSUtils.isWin()) {
+		if(OSUtils.isWin() || OSUtils.isMac()) {
 			BeautyEyeUtils.init();
 		}
 		
@@ -95,7 +95,7 @@ final public class VersionMgr {
 		boolean manage = true;
 		if(args != null && args.length >= 1) {
 			manage = "-m".equals(args[0]);
-			if(!OSUtils.isWin()) {
+			if(OSUtils.isUnix()) {
 				manage = false;
 			}
 		}
