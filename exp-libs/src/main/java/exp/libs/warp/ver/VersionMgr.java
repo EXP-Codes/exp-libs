@@ -48,7 +48,9 @@ final public class VersionMgr {
 	 * 构造函数
 	 */
 	private VersionMgr() {
-		BeautyEyeUtils.init();
+		if(OSUtils.isWin()) {
+			BeautyEyeUtils.init();
+		}
 		
 		this.curVerInfo = "";
 		this.appName = "";

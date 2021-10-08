@@ -68,7 +68,7 @@ public class TestDBUtils {
 
 	@Test
 	public void testCreateBeanFromDB() {
-		DataSourceBean ds = conf.getDataSourceBean("TEST");
+		DataSourceBean ds = conf.getDataSourceBean("TEST-DS-SQL");
 		Connection conn = DBUtils.getConn(ds);
 		DBUtils.createBeanFromDB(conn, 
 				"exp.libs.bean.test", 

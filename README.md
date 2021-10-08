@@ -41,6 +41,8 @@
 </dependency>
 ```
 
+> 含有此构件的 [Nexus 仓库](https://github.com/lyy289065406/nexus-docker/tree/produce)
+
 
 ## 功能模块
 

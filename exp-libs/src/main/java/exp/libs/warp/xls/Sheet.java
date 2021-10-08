@@ -534,7 +534,7 @@ public class Sheet {
 	 * 设置单元格格式
 	 * @param row 行索引（从0开始）
 	 * @param col 列索引（从0开始）
-	 * @param style 单元格格式
+	 * @param style 单元格格式: {@link Excel#createCellStyle()}
 	 */
 	public void setStyle(int row, int col, CellStyle style) {
 		if(!isNull() && _inRange(row, col)) {
