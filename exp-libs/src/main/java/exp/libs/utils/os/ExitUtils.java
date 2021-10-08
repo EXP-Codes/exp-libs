@@ -83,7 +83,7 @@ final public class ExitUtils extends Thread {
 	 * @param millis 监听间隔(ms)
 	 */
 	public static void addWinExitListener(long millis) {
-		if(OSUtils.isWin() == false) {
+		if(OSUtils.isUnix()) {
 			return;
 		}
 		
