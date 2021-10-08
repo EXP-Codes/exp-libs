@@ -21,7 +21,7 @@
 
 ## 安装与使用
 
-　由于`exp-libs`封装了大量第三方构件，因此需要在**开发环境**直接导入到Maven的`pom.xml`文件使用，<br/>　利用pom文件自动加载第三方依赖构件（若仅导入单个`exp-libs.jar`，有很多功能是无法使用的）。
+由于 `exp-libs` 依赖了大量第三方构件并封装，若仅导入本项目的 `exp-libs.jar`，有很多功能是无法使用的。关于导入相关依赖的方法可参看 [这里](./exp-libs/lib/README.md) 。
 
 - [在线Javadoc](https://lyy289065406.github.io/api-online/javadoc/exp-libs/1.1/index.html)
 - POM坐标（完全版）：
@@ -41,7 +41,7 @@
 </dependency>
 ```
 
-> 含有此构件的 [Nexus 仓库](https://github.com/lyy289065406/nexus-docker/tree/produce)
+> 含有此构件的 [Nexus 仓库](https://github.com/lyy289065406/nexus-docker/tree/produce)（需要切换到 produce 分支并使用 docker 运行）
 
 
 ## 功能模块
@@ -236,7 +236,7 @@ JDK1.6/1.7仅支持遵循TLSv1.1协议的HTTPS访问，若网站强制要求使�
 
 ## 版权声明
 
-　[![Copyright (C) 2016-2019 By EXP](https://img.shields.io/badge/Copyright%20(C)-2016~2019%20By%20EXP-blue.svg)](http://exp-blog.com)　[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+　[![Copyright (C) EXP,2016](https://img.shields.io/badge/Copyright%20(C)-EXP%202016-blue.svg)](http://exp-blog.com)　[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
   
 
 - Site: [http://exp-blog.com](http://exp-blog.com) 

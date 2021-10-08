@@ -57,30 +57,41 @@ public final class OSUtils {
 	protected OSUtils() {}
 	
 	/**
-	 * 判断当前操作系统是否为windows
+	 * 判断当前操作系统是否为 windows
 	 * @return true:windows; false:其他
 	 */
 	public static boolean isWin() {
 		boolean isWin = true;
-		
 		if(OS_NAME.contains("win")) {
 			isWin = true;
-			
-		} else if(OS_NAME.contains("mac")) {
-			isWin = false;	// mac 属 unix 其实也是支持界面运行的
-			
+
 		} else {
-			isWin = false;	// linux
+			isWin = false;
 		}
 		return isWin;
 	}
-	
+
 	/**
-	 * 判断当前操作系统是否为unix
+	 * 判断当前操作系统是否为 mac
+	 * @return true:mac; false:其他
+	 */
+	public static boolean isMac() {
+		boolean isMac = true;
+		if(OS_NAME.contains("mac")) {
+			isMac = true;
+
+		} else {
+			isMac = false;
+		}
+		return isMac;
+	}
+
+	/**
+	 * 判断当前操作系统是否为 unix
 	 * @return true:unix; false:其他
 	 */
 	public static boolean isUnix() {
-		return !isWin();
+		return !isWin(); // mac 也算是 unix
 	}
 	
 	/**

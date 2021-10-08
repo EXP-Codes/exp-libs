@@ -49,7 +49,7 @@ public abstract class HttpCookie {
 		if(StrUtils.isNotEmpty(headerCookies)) {
 			String[] lines = headerCookies.split(CR);
 			for(int i = 0; i < lines.length; i++) {
-				add(lines[i]);
+				add(lines[i].trim());
 			}
 		}
 	}
