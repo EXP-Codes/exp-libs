@@ -35,8 +35,8 @@ public class CmdUtils {
 	protected CmdUtils() {}
 	
 	/**
-	 * 执行控制台命令
-	 * @param cmd 控制台命令
+	 * 执行控制台命令（简单命令）
+	 * @param cmd 控制台命令（不可包含重定向符 '>'、'<' 和 管道符 '|'）
 	 * @return 执行结果
 	 */
 	public static CmdResult execute(String cmd) {
@@ -45,10 +45,10 @@ public class CmdUtils {
 	
 	/**
 	 * <PRE>
-	 * 执行控制台命令.
+	 * 执行控制台命令（简单命令）
 	 * 若启动debug模式, 则命令会阻塞等待异常码返回.
 	 * </PRE>
-	 * @param cmd 控制台命令
+	 * @param cmd 控制台命令（不可包含重定向符 '>'、'<' 和 管道符 '|'）
 	 * @param debug 调试模式. true:返回包含异常码和异常信息的结果(会阻塞); false:只返回命令执行结果 
 	 * @return 执行结果
 	 */
@@ -61,6 +61,37 @@ public class CmdUtils {
 			
 		} catch (Exception e) {
 			log.error("执行控制台命令失败: {}", cmd, e);
+		}
+		return cmdRst;
+	}
+	
+	/**
+	 * 执行控制台命令（复杂命令）
+	 * @param cmds 控制台命令
+	 * @return 执行结果
+	 */
+	public static CmdResult execute(String[] cmds) {
+		return execute(cmds, false);
+	}
+	
+	/**
+	 * <PRE>
+	 * 执行控制台命令（复杂命令）
+	 * 若启动debug模式, 则命令会阻塞等待异常码返回.
+	 * </PRE>
+	 * @param cmds 控制台命令
+	 * @param debug 调试模式. true:返回包含异常码和异常信息的结果(会阻塞); false:只返回命令执行结果 
+	 * @return 执行结果
+	 */
+	public static CmdResult execute(String[] cmds, boolean debug) {
+		CmdResult cmdRst = CmdResult.DEFAULT;
+		try {
+			Process process = Runtime.getRuntime().exec(cmds, null, null);
+			cmdRst = _execute(process, debug);
+			process.destroy();
+			
+		} catch (Exception e) {
+			log.error("执行控制台命令失败: {}", StrUtils.concat(cmds), e);
 		}
 		return cmdRst;
 	}
