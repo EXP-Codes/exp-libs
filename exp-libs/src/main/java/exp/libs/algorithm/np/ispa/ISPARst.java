@@ -13,7 +13,7 @@ import exp.libs.algorithm.struct.graph.Node;
  * <br/><B>PROJECT : </B> exp-libs
  * <br/><B>SUPPORT : </B> <a href="http://www.exp-blog.com" target="_blank">www.exp-blog.com</a> 
  * @version   2017-06-13
- * @author    EXP: ***REMOVED***@qq.com
+ * @author    EXP: 272629724@qq.com
  * @since     jdk版本：jdk1.6
  */
 public final class ISPARst {

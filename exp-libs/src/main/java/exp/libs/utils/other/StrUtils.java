@@ -18,7 +18,7 @@ import exp.libs.utils.verify.VerifyUtils;
  * <br/><B>PROJECT : </B> exp-libs
  * <br/><B>SUPPORT : </B> <a href="http://www.exp-blog.com" target="_blank">www.exp-blog.com</a> 
  * @version   2016-01-19
- * @author    EXP: ***REMOVED***@qq.com
+ * @author    EXP: 272629724@qq.com
  * @since     jdk版本：jdk1.6
  */
 public class StrUtils {

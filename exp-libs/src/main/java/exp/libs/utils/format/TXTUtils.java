@@ -25,7 +25,7 @@ import exp.libs.utils.num.UnitUtils;
  * <br/><B>PROJECT : </B> exp-libs
  * <br/><B>SUPPORT : </B> <a href="http://www.exp-blog.com" target="_blank">www.exp-blog.com</a> 
  * @version   2018-05-03
- * @author    EXP: ***REMOVED***@qq.com
+ * @author    EXP: 272629724@qq.com
  * @since     jdk版本：jdk1.6
  */
 public class TXTUtils {
